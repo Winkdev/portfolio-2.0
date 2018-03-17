@@ -1,0 +1,36 @@
+@include keyframe(twirl){
+    from {transform: rotate(0);}
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+@include keyframe(twirl-backwards){
+    from {transform: rotate(0);}
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+#animated-button:hover{
+  @include transform(scale(1.2));
+  @include transition(1s transform);
+}
+
+#animated-button{
+    @include transition(transform 1s);
+}
+
+#welcome-container{
+    @include animation(twirl, 0.5s, ease-out,1, paused, 0);
+}
+
+
+.rotate{
+    @include animation(twirl, 0.5s, ease-out,1, running, 0);
+}
+
+.rotateB{
+    @include animation(twirl-backwards, 0.5s, ease-out,1, running, 0);
+  }
