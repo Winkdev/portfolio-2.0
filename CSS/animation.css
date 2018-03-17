@@ -1,0 +1,59 @@
+@-webkit-keyframes twirl{
+    from {transform: rotate(0);}
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes twirl{
+    from {transform: rotate(0);}
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes twirl-backwards{
+    from {transform: rotate(0);}
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes twirl-backwards{
+    from {transform: rotate(0);}
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+#animated-button:hover{
+    transform: scale(1.5);
+    transition: 1s transform;
+}
+
+#animated-button{
+    transition: transform 1s;
+}
+
+#welcome-container{
+    -webkit-animation: twirl 0.5s ease-out;
+    -webkit-animation-play-state: paused;
+    animation: twirl 0.5s ease-out;
+    animation-play-state: paused;
+}
+
+
+.rotate{
+    -webkit-animation: twirl 0.5s ease-out;
+    -webkit-animation-play-state: running;
+    animation: twirl 0.5s ease-out;
+    animation-play-state: running; 
+}
+
+.rotateB{
+    -webkit-animation: twirl-backwards 0.5s ease-out;
+    -webkit-animation-play-state: running;
+    animation: twirl-backwards 0.5s ease-out;
+    animation-play-state: running; 
+}
+
