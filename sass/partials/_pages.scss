@@ -13,26 +13,11 @@
   text-align: left!important;
 }
 
-#hire-me-page{
-
-}
-
-
-#contact-info{
-
-}
-
-#me{
-
-}
-
 @media all and (max-width:400px){
   .page{
     width: 100%;
     height:90%;
-    position: absolute;
-    left:150%;
     top:20px;
-    box-shadow: 0 0 1px 1px whitesmoke;
-    }
+    border:1px solid white;
+  }
 }

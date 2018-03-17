@@ -2,8 +2,11 @@
     padding:0;
     margin:0;
     box-sizing: border-box;
-    font-family: raleway, monospace;
-    font-weight: bold;
+    // font-family: 'Vollkorn', serif;
+    // font-family: 'IBM Plex Serif', serif;
+    // font-family: 'Merriweather', serif;
+    // font-family: 'Source Serif Pro', serif;
+    font-family: 'raleway', cursive;
 }
 
 html,body{
@@ -28,28 +31,37 @@ html,body{
     @include flex-direction(column);
     @include align-items(center);
     @include justify-content(center);
-    overflow: hidden;
     height:200px;
     color:whitesmoke;
-    overflow: visible;
     text-transform: capitalize;
-}
 
-#welcome{
-    font-size: 2.8em;
-    letter-spacing: 5px;
+    p{
+      font-size:1.2em;
+      color:whitesmoke;
+    }
+
+    p#welcome{
+      font-size: 2.8em;
+      letter-spacing: 5px;
+    }
 }
 
 #animated-button{
     width:70px;
     height:70px;
     border-radius: 100%;
-    background-color: transparent;
-    border: none;
-    box-shadow: 0 0 3px 1px white;
+    background-color: $black;
+    box-shadow: 0 0 0px 1px white;
+    border:0;
     letter-spacing: 1.5px;
-    transition: 1s transform;
     margin-top:20px;
+    font-size:0.8em;
+    letter-spacing: 3px;
+
+    &:hover{
+        cursor: pointer;
+        background: black;
+    }
 }
 
 #welcome, #animated-button{
@@ -60,14 +72,7 @@ html,body{
     outline:0;
 }
 
-#animated-button:hover{
-    background-color:transparent;
-    color:white;
-    border-color: white;
-    @include transform(scale(1.2));
-    @include transition(1s transform);
-    cursor: pointer;
-}
+
 /*THE MAIN BUTTONS*/
 #menu-button-container{
     display:none;
@@ -98,7 +103,7 @@ html,body{
 #menu{
     left:50%;
     top:50%;
-    transform: translate(-50%,-50%);
+    @include transform(translate(-50%,-50%));
     border:1px solid white;
     background-color: $black;
     box-shadow: none;
