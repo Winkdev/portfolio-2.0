@@ -16,13 +16,17 @@ $(document).ready(function(){
       buttonSound.currentTime = 0;
       buttonSound.play();
     }
-
-    $("#menu").bind("mouseenter", playButtonSound);
-    $("#animated-button").bind("mouseenter", playButtonSound);
+    //
+    // $("#menu").bind("mouseenter", playButtonSound);
+    // $("#animated-button").bind("mouseenter", playButtonSound);
 
     function hideWelcomeContainer(){ // rotate the main screen and hide it
-        $("#welcome-container").css("-webkit-animation-play-state","running").animate({width:"0",height:"0"},400,function(){
-            $("#welcome-container").css("display","none");
+        // $("#welcome-container").css("-webkit-animation-play-state","running")
+        // .animate({width:"0",height:"0"},400,function(){
+        //     $("#welcome-container").css("display","none");
+        // });
+        $("#welcome-container").fadeOut('fast',function(){
+          $(this).css('display','none');
         });
     }
 
@@ -32,7 +36,7 @@ $(document).ready(function(){
 
         if (docWidth > 650){
             elHW = "125px";
-            menuBtnCont = 500;
+            menuBtnCont = 450;
             fontSize = "14px"
             menuLetterSpacing = "8px";
             letterSpacing = "3px";
@@ -48,7 +52,7 @@ $(document).ready(function(){
 
         else if (docWidth < 400){
             elHW = "65px";
-            menuBtnCont = 200;
+            menuBtnCont = 150;
             fontSize = "8px";
             menuLetterSpacing = "3px";
             letterSpacing = "1px";
@@ -125,18 +129,33 @@ $(document).ready(function(){
         //place the dots in a square position
 
     function openDots(){
-
+      var glowSpeed = 300;
         $(".menu-button").not("#menu").mouseenter(function(){ //take them out of the button
-            $(this).children(".dots:nth-child(1)").stop().animate({left:"-20%",top:"110%",opacity:"1"},300);
-            $(this).children(".dots:nth-child(2)").stop().animate({left:"120%",top:"110%",opacity:"1"},300);
-            $(this).children(".dots:nth-child(3)").stop().animate({left:"-20%",top:"-10%",opacity:"1"},300);
-            $(this).children(".dots:nth-child(4)").stop().animate({left:"120%",top:"-10%",opacity:"1"},300);
+            $(this).children(".dots:nth-child(1)").stop()
+            .css({left:"-20%",top:"110%"})
+            .animate({opacity:"1"},glowSpeed);
+
+            $(this).children(".dots:nth-child(2)").stop()
+            .css({left:"120%",top:"110%"})
+            .animate({opacity:"1"},glowSpeed);
+
+            $(this).children(".dots:nth-child(3)").stop()
+            .css({left:"-20%",top:"-10%"})
+            .animate({opacity:"1"},glowSpeed);
+
+            $(this).children(".dots:nth-child(4)").stop()
+            .css({left:"120%",top:"-10%"})
+            .animate({opacity:"1"},glowSpeed);
         });// end of mouse enter
     }//end of openDots
 
     function closeDots(){
         $(".menu-button").mouseleave(function(){ //place the dots back in the button
-            $(this).children(".dots").stop().animate({left:"50%",top:"50%",opacity:"0"},200);
+            $(this).children(".dots").stop()
+            .animate({opacity:"0"},200,function(){
+              $(this).css({left:"50%",top:"50%"});
+            });
+
         }); // end of mouse leave
     }
 

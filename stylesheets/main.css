@@ -441,7 +441,13 @@ input[type="checkbox"], input[type="radio"] {
   display: flex;
 }
 
-/* line 1, ../sass/partials/_index.scss */
+/*
+Z-INDEXES
+.menu-button: 1000
+#menu : 100!important;
+dots: 2;
+*/
+/* line 7, ../sass/partials/_index.scss */
 * {
   padding: 0;
   margin: 0;
@@ -449,14 +455,14 @@ input[type="checkbox"], input[type="radio"] {
   font-family: 'raleway', cursive;
 }
 
-/* line 12, ../sass/partials/_index.scss */
+/* line 18, ../sass/partials/_index.scss */
 html, body {
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
 
-/* line 18, ../sass/partials/_index.scss */
+/* line 24, ../sass/partials/_index.scss */
 #main-page-container {
   background-color: #171613;
   width: 100%;
@@ -469,7 +475,7 @@ html, body {
   justify-content: center;
 }
 
-/* line 28, ../sass/partials/_index.scss */
+/* line 34, ../sass/partials/_index.scss */
 #welcome-container {
   background: transparent;
   -webkit-flex-direction: column;
@@ -482,18 +488,18 @@ html, body {
   color: whitesmoke;
   text-transform: capitalize;
 }
-/* line 38, ../sass/partials/_index.scss */
+/* line 44, ../sass/partials/_index.scss */
 #welcome-container p {
   font-size: 1.2em;
   color: whitesmoke;
 }
-/* line 43, ../sass/partials/_index.scss */
+/* line 49, ../sass/partials/_index.scss */
 #welcome-container p#welcome {
   font-size: 2.8em;
   letter-spacing: 5px;
 }
 
-/* line 49, ../sass/partials/_index.scss */
+/* line 55, ../sass/partials/_index.scss */
 #animated-button {
   width: 70px;
   height: 70px;
@@ -506,52 +512,54 @@ html, body {
   font-size: 0.8em;
   letter-spacing: 3px;
 }
-/* line 61, ../sass/partials/_index.scss */
+/* line 67, ../sass/partials/_index.scss */
 #animated-button:hover {
   cursor: pointer;
   background: black;
 }
 
-/* line 67, ../sass/partials/_index.scss */
+/* line 73, ../sass/partials/_index.scss */
 #welcome, #animated-button {
   color: whitesmoke;
 }
 
-/* line 71, ../sass/partials/_index.scss */
+/* line 77, ../sass/partials/_index.scss */
 #animated-button:focus, #animated-button:active {
   outline: 0;
 }
 
 /*THE MAIN BUTTONS*/
-/* line 77, ../sass/partials/_index.scss */
+/* line 83, ../sass/partials/_index.scss */
 #menu-button-container {
   display: none;
   overflow: visible;
   position: absolute;
+  z-index: 10000 !important;
 }
 
-/* line 84, ../sass/partials/_index.scss */
+/* line 90, ../sass/partials/_index.scss */
 .menu-button {
   overflow: visible;
   width: 0;
   height: 0;
   border-radius: 100%;
   position: absolute;
-  background: transparent;
+  background: #171613;
   color: white;
   display: block;
-  z-index: 10;
   letter-spacing: 2px;
   cursor: pointer;
   border: 1px solid white;
+  text-transform: capitalize;
+  z-index: 1000 !important;
 }
 
-/* line 99, ../sass/partials/_index.scss */
+/* line 106, ../sass/partials/_index.scss */
 .menu-button:focus, .menu-button:active {
   outline: 0;
 }
 
-/* line 103, ../sass/partials/_index.scss */
+/* line 110, ../sass/partials/_index.scss */
 #menu {
   left: 50%;
   top: 50%;
@@ -562,14 +570,15 @@ html, body {
   border: 1px solid white;
   background-color: #171613;
   box-shadow: none;
+  z-index: 1000 !important;
 }
 
-/* line 112, ../sass/partials/_index.scss */
+/* line 120, ../sass/partials/_index.scss */
 #menu:hover {
   background-color: black;
 }
 
-/* line 116, ../sass/partials/_index.scss */
+/* line 124, ../sass/partials/_index.scss */
 #education {
   left: 50%;
   top: 50%;
@@ -579,7 +588,7 @@ html, body {
   transform: translate(-50%, -50%);
 }
 
-/* line 123, ../sass/partials/_index.scss */
+/* line 131, ../sass/partials/_index.scss */
 #hire-me {
   left: 50%;
   top: 50%;
@@ -589,7 +598,7 @@ html, body {
   transform: translate(-50%, -50%);
 }
 
-/* line 129, ../sass/partials/_index.scss */
+/* line 137, ../sass/partials/_index.scss */
 #about-me {
   left: 50%;
   top: 50%;
@@ -599,7 +608,7 @@ html, body {
   transform: translate(-50%, -50%);
 }
 
-/* line 135, ../sass/partials/_index.scss */
+/* line 143, ../sass/partials/_index.scss */
 #experience {
   left: 50%;
   top: 50%;
@@ -609,7 +618,7 @@ html, body {
   transform: translate(-50%, -50%);
 }
 
-/* line 141, ../sass/partials/_index.scss */
+/* line 149, ../sass/partials/_index.scss */
 .dots {
   width: 10px;
   height: 10px;
@@ -624,14 +633,15 @@ html, body {
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   opacity: 0;
+  z-index: 2;
 }
 
-/* line 154, ../sass/partials/_index.scss */
+/* line 163, ../sass/partials/_index.scss */
 .active {
   color: white;
 }
 
-/* line 158, ../sass/partials/_index.scss */
+/* line 167, ../sass/partials/_index.scss */
 .dim-page {
   width: 100%;
   height: 100%;
@@ -639,29 +649,70 @@ html, body {
   opacity: 0.8;
 }
 
+@media all and (max-width: 650px) {
+  /* line 178, ../sass/partials/_index.scss */
+  #welcome-container p {
+    text-align: center;
+    font-size: 1em !important;
+  }
+  /* line 183, ../sass/partials/_index.scss */
+  #welcome-container #welcome {
+    font-size: 1.8em !important;
+  }
+  /* line 187, ../sass/partials/_index.scss */
+  #welcome-container #animated-button {
+    width: 60px;
+    height: 60px;
+    font-size: 0.6em;
+  }
+
+  /* line 194, ../sass/partials/_index.scss */
+  .dots {
+    display: none;
+  }
+
+  /* line 198, ../sass/partials/_index.scss */
+  .page {
+    width: 100%;
+    height: 100%;
+  }
+}
+@media all and (max-width: 300px) {
+  /* line 208, ../sass/partials/_index.scss */
+  #welcome-container p {
+    text-align: center;
+    font-size: 0.8em !important;
+  }
+  /* line 213, ../sass/partials/_index.scss */
+  #welcome-container #welcome {
+    font-size: 1.5em !important;
+    text-align-last: center;
+  }
+
+  /* line 219, ../sass/partials/_index.scss */
+  .dots {
+    display: none;
+  }
+
+  /* line 223, ../sass/partials/_index.scss */
+  .page {
+    width: 100%;
+    height: 100%;
+  }
+}
 /* line 1, ../sass/partials/_pages.scss */
 .page {
   width: 80%;
-  height: 90%;
+  height: calc(100% - 40px);
   position: absolute;
   left: 150%;
   top: 20px;
-  font-size: 1.5em;
   text-align: left;
-  margin-top: 50px;
+  border: 1px solid green;
+  z-index: 1 !important;
 }
-
-/* line 12, ../sass/partials/_pages.scss */
+/* line 10, ../sass/partials/_pages.scss */
 .page h1 {
+  font-size: 2.5em;
   text-align: left !important;
-}
-
-@media all and (max-width: 400px) {
-  /* line 17, ../sass/partials/_pages.scss */
-  .page {
-    width: 100%;
-    height: 90%;
-    top: 20px;
-    border: 1px solid white;
-  }
 }

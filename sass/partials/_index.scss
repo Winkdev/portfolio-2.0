@@ -1,3 +1,9 @@
+/*
+Z-INDEXES
+.menu-button: 1000
+#menu : 100!important;
+dots: 2;
+*/
 *{
     padding:0;
     margin:0;
@@ -78,7 +84,7 @@ html,body{
     display:none;
     overflow: visible;
     position: absolute;
-
+    z-index: 10000!important;
 }
 
 .menu-button{
@@ -87,13 +93,14 @@ html,body{
     height:0;
     border-radius: 100%;
     position: absolute;
-    background: transparent;
+    background: $black;
     color:white;
     display:block;
-    z-index: 10;
     letter-spacing: 2px;
     cursor: pointer;
     border:1px solid white;
+    text-transform: capitalize;
+    z-index: 1000!important;
 }
 
 .menu-button:focus, .menu-button:active{
@@ -107,6 +114,7 @@ html,body{
     border:1px solid white;
     background-color: $black;
     box-shadow: none;
+    z-index: 1000!important;
 }
 
 #menu:hover{
@@ -149,6 +157,7 @@ html,body{
     position: absolute;
     @include transform(translate(-50%, -50%));
     opacity: 0;
+    z-index: 2;
 }
 
 .active{
@@ -160,4 +169,59 @@ html,body{
     height:100%;
     background-color:inherit;
     opacity:0.8;
+}
+
+
+@media all and (max-width: 650px){
+  #welcome-container{
+
+    p{
+      text-align: center;
+      font-size: 1em!important;
+    }
+
+    #welcome{
+      font-size: 1.8em!important;
+    }
+
+    #animated-button{
+      width:60px;
+      height:60px;
+      font-size:0.6em;
+    }
+  }
+
+  .dots{
+    display:none;
+  }
+
+  .page{
+    width: 100%;
+    height:100%;
+  }
+}
+
+
+@media all and (max-width: 300px){
+  #welcome-container{
+
+    p{
+      text-align: center;
+      font-size: 0.8em!important;
+    }
+
+    #welcome{
+      font-size: 1.5em!important;
+      text-align-last: center;
+    }
+  }
+
+  .dots{
+    display:none;
+  }
+
+  .page{
+    width: 100%;
+    height:100%;
+  }
 }
