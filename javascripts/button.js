@@ -9,8 +9,34 @@ $(document).ready(function(){
     var exp = $("#experience-page");
     var hire = $("#hire-me-page");
     var about = $("#about-me-page");
-    var docHeight,docWidth,leftcenter,topCenter,fontSize, letterSpacing,menuLetterSpacing;
+    var leftcenter,topCenter,fontSize, letterSpacing,menuLetterSpacing;
     var buttonSound = new Audio("sounds/light.mp3");
+    var docHeight = $("body").height();
+    var docWidth = $("body").width();
+    var randomLeft, randomTop;
+
+    function starsGenerator(elem, numberOfStars){
+      var star, randomHW;
+      for(var i = 0; i < numberOfStars; i++){
+
+        star = "<div class='stars' id='star"+i+"'></div>";
+        randomLeft = Math.floor(Math.random() * docWidth);
+        randomTop = Math.floor(Math.random() * docHeight);
+        randomHW = Math.floor(Math.random() * 4) + 1;
+
+        $(elem).append(star);
+        $("#star"+i).css({
+          'border-radius':'100%',
+          'position':'absolute',
+          'left':randomLeft,
+          'top':randomTop,
+          'height': randomHW + "px",
+          'width': randomHW + "px"
+        });
+      }
+    }
+
+    starsGenerator("#main-page-container",100);
 
     function playButtonSound(){
       buttonSound.currentTime = 0;
@@ -20,17 +46,14 @@ $(document).ready(function(){
     // $("#menu").bind("mouseenter", playButtonSound);
     // $("#animated-button").bind("mouseenter", playButtonSound);
 
-    function hideWelcomeContainer(){ // rotate the main screen and hide it
-        // $("#welcome-container").css("-webkit-animation-play-state","running")
-        // .animate({width:"0",height:"0"},400,function(){
-        //     $("#welcome-container").css("display","none");
-        // });
+    function hideWelcomeContainer(){
         $("#welcome-container").fadeOut('fast',function(){
           $(this).css('display','none');
         });
     }
 
-    function openMenuButton(){ //opens all the buttons and put them in their positions
+    //opens all the buttons and put them in their positions depending on the document size (responsive)
+    function openMenuButton(){
         docHeight = window.innerHeight || document.documentElement.clientHeight ||     document.body.clientHeight;
         docWidth = window.innerWidth || document.documentElement.clientWidth ||       document.body.clientWidth;
 
@@ -58,13 +81,13 @@ $(document).ready(function(){
             letterSpacing = "1px";
         }
 
-                //finds the center
+        //finds the center
         leftCenter = (docWidth/2) - (menuBtnCont/2);
         topCenter = (docHeight/2) - (menuBtnCont/2);
 
         $("#menu-button-container").css({"display":"block","-webkit-animation-play-state":"running"}).animate({left:leftCenter + "px",top:topCenter + "px",width:menuBtnCont + "px",height:menuBtnCont + "px"},300);
 
-
+        //positions the buttons
         $(".menu-button").css({display:"block",opacity:"1",left:"50%",top:"50%","font-size":fontSize,"letter-spacing":letterSpacing});
         $("#menu").animate({height:elHW,width:elHW,letterSpacing:menuLetterSpacing},500);
         $("#education").animate({top:"0",left:"50%",width:elHW,height:elHW},500);
@@ -76,7 +99,7 @@ $(document).ready(function(){
 
     }
 
-    function closeMenuButton(){ //put the menu button top left
+    function closeMenuButton(){ //put the menu button top left and closes the buttons
         var contHW,menuSize;
 
         if (docWidth > 650){
@@ -128,24 +151,24 @@ $(document).ready(function(){
     }
         //place the dots in a square position
 
-    function openDots(){
-      var glowSpeed = 300;
+    function openDots(){ //the dots that come out of the button on hover
+      var opacitySpeed = 300;
         $(".menu-button").not("#menu").mouseenter(function(){ //take them out of the button
             $(this).children(".dots:nth-child(1)").stop()
             .css({left:"-20%",top:"110%"})
-            .animate({opacity:"1"},glowSpeed);
+            .animate({opacity:"1"},opacitySpeed);
 
             $(this).children(".dots:nth-child(2)").stop()
             .css({left:"120%",top:"110%"})
-            .animate({opacity:"1"},glowSpeed);
+            .animate({opacity:"1"},opacitySpeed);
 
             $(this).children(".dots:nth-child(3)").stop()
             .css({left:"-20%",top:"-10%"})
-            .animate({opacity:"1"},glowSpeed);
+            .animate({opacity:"1"},opacitySpeed);
 
             $(this).children(".dots:nth-child(4)").stop()
             .css({left:"120%",top:"-10%"})
-            .animate({opacity:"1"},glowSpeed);
+            .animate({opacity:"1"},opacitySpeed);
         });// end of mouse enter
     }//end of openDots
 
@@ -159,7 +182,7 @@ $(document).ready(function(){
         }); // end of mouse leave
     }
 
-    function renew(elem){
+    function renew(elem){ //clones an element and returns it
         elem.before(elem.clone(true));
         var newElem = elem.prev();
         elem.remove();
@@ -168,8 +191,8 @@ $(document).ready(function(){
 
     function responsive(){
         //gets the height and width of the window
-        docHeight = window.innerHeight || document.documentElement.clientHeight ||     document.body.clientHeight;
-        docWidth = window.innerWidth || document.documentElement.clientWidth ||       document.body.clientWidth;
+        docHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+        docWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 
         if(status === "closed"){
 
@@ -213,7 +236,8 @@ $(document).ready(function(){
                 $(".menu-button").css({"font-size":"8px","letter-spacing":"1px"});
                 $("#menu").css({letterSpacing:"3px"});
             }
-                    //finds the center
+
+            //finds the center
             leftCenter = (docWidth/2) - (menuBtnCont/2);
             topCenter = (docHeight/2) - (menuBtnCont/2);
             $("#menu-button-container").css({"display":"block","-webkit-animation-play-state":"running"}).css({left:leftCenter + "px",top:topCenter + "px",width:menuBtnCont + "px",height:menuBtnCont + "px"},300);
@@ -254,8 +278,8 @@ $(document).ready(function(){
                 openMenuButton();
                 $(".menu-button").children(".dots").stop().animate({left:"50%",top:"50%",opacity:"0"},200);
                 status = "open";
-
             }
+
         }); // end of .menu-button.click
 
         $("#menu").click(function(){

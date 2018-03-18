@@ -25,3 +25,16 @@
 .rotateB{
     @include animation(twirl-backwards, 0.5s, ease-out,1, running, 0);
   }
+
+@include keyframe(starGlow){
+    0% {
+      box-shadow: 0 0 0px 0px #fff;
+    }
+    50% {
+      box-shadow: 0 0 5px 0px #fff;
+    }
+
+    100%{
+      box-shadow: 0 0 0px 0px #fff;
+    }
+}

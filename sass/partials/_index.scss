@@ -40,7 +40,7 @@ html,body{
     height:200px;
     color:whitesmoke;
     text-transform: capitalize;
-
+    z-index: 100;
     p{
       font-size:1.2em;
       color:whitesmoke;
@@ -63,7 +63,7 @@ html,body{
     margin-top:20px;
     font-size:0.8em;
     letter-spacing: 3px;
-
+    z-index: 1000;
     &:hover{
         cursor: pointer;
         background: black;
@@ -169,6 +169,12 @@ html,body{
     height:100%;
     background-color:inherit;
     opacity:0.8;
+}
+
+.stars{
+  @include animation(starGlow, 3s, ease-out, infinite, running, 0);
+  background:white;
+  opacity: 0.5;
 }
 
 

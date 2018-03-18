@@ -432,6 +432,39 @@ input[type="checkbox"], input[type="radio"] {
   animation-timing-function: ease-out;
 }
 
+@-webkit-keyframes starGlow {
+  0% {
+    box-shadow: 0 0 0px 0px #fff;
+  }
+  50% {
+    box-shadow: 0 0 5px 0px #fff;
+  }
+  100% {
+    box-shadow: 0 0 0px 0px #fff;
+  }
+}
+@-moz-keyframes starGlow {
+  0% {
+    box-shadow: 0 0 0px 0px #fff;
+  }
+  50% {
+    box-shadow: 0 0 5px 0px #fff;
+  }
+  100% {
+    box-shadow: 0 0 0px 0px #fff;
+  }
+}
+@keyframes starGlow {
+  0% {
+    box-shadow: 0 0 0px 0px #fff;
+  }
+  50% {
+    box-shadow: 0 0 5px 0px #fff;
+  }
+  100% {
+    box-shadow: 0 0 0px 0px #fff;
+  }
+}
 /* line 1, ../sass/partials/_mixins.scss */
 #main-page-container, #welcome-container {
   display: -webkit-box;
@@ -487,6 +520,7 @@ html, body {
   height: 200px;
   color: whitesmoke;
   text-transform: capitalize;
+  z-index: 100;
 }
 /* line 44, ../sass/partials/_index.scss */
 #welcome-container p {
@@ -511,6 +545,7 @@ html, body {
   margin-top: 20px;
   font-size: 0.8em;
   letter-spacing: 3px;
+  z-index: 1000;
 }
 /* line 67, ../sass/partials/_index.scss */
 #animated-button:hover {
@@ -649,52 +684,90 @@ html, body {
   opacity: 0.8;
 }
 
+/* line 174, ../sass/partials/_index.scss */
+.stars {
+  -webkit-animation-delay: 0;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-name: starGlow;
+  -webkit-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-play-state: running;
+  -webkit-animation-timing-function: ease-out;
+  -moz-animation-delay: 0;
+  -moz-animation-duration: 3s;
+  -moz-animation-name: starGlow;
+  -moz-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-play-state: running;
+  -moz-animation-timing-function: ease-out;
+  -o-animation-delay: 0;
+  -o-animation-duration: 3s;
+  -o-animation-name: starGlow;
+  -o-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -o-animation-iteration-count: infinite;
+  -o-animation-play-state: running;
+  -o-animation-timing-function: ease-out;
+  animation-delay: 0;
+  animation-duration: 3s;
+  animation-name: starGlow;
+  animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+  animation-timing-function: ease-out;
+  background: white;
+  opacity: 0.5;
+}
+
 @media all and (max-width: 650px) {
-  /* line 178, ../sass/partials/_index.scss */
+  /* line 184, ../sass/partials/_index.scss */
   #welcome-container p {
     text-align: center;
     font-size: 1em !important;
   }
-  /* line 183, ../sass/partials/_index.scss */
+  /* line 189, ../sass/partials/_index.scss */
   #welcome-container #welcome {
     font-size: 1.8em !important;
   }
-  /* line 187, ../sass/partials/_index.scss */
+  /* line 193, ../sass/partials/_index.scss */
   #welcome-container #animated-button {
     width: 60px;
     height: 60px;
     font-size: 0.6em;
   }
 
-  /* line 194, ../sass/partials/_index.scss */
+  /* line 200, ../sass/partials/_index.scss */
   .dots {
     display: none;
   }
 
-  /* line 198, ../sass/partials/_index.scss */
+  /* line 204, ../sass/partials/_index.scss */
   .page {
     width: 100%;
     height: 100%;
   }
 }
 @media all and (max-width: 300px) {
-  /* line 208, ../sass/partials/_index.scss */
+  /* line 214, ../sass/partials/_index.scss */
   #welcome-container p {
     text-align: center;
     font-size: 0.8em !important;
   }
-  /* line 213, ../sass/partials/_index.scss */
+  /* line 219, ../sass/partials/_index.scss */
   #welcome-container #welcome {
     font-size: 1.5em !important;
     text-align-last: center;
   }
 
-  /* line 219, ../sass/partials/_index.scss */
+  /* line 225, ../sass/partials/_index.scss */
   .dots {
     display: none;
   }
 
-  /* line 223, ../sass/partials/_index.scss */
+  /* line 229, ../sass/partials/_index.scss */
   .page {
     width: 100%;
     height: 100%;
@@ -708,10 +781,9 @@ html, body {
   left: 150%;
   top: 20px;
   text-align: left;
-  border: 1px solid green;
   z-index: 1 !important;
 }
-/* line 10, ../sass/partials/_pages.scss */
+/* line 9, ../sass/partials/_pages.scss */
 .page h1 {
   font-size: 2.5em;
   text-align: left !important;
