@@ -7,20 +7,34 @@
     text-align: left;
     z-index: 1!important;
     // border: 1px solid white;
-    @extend %flex;
-    @include align-items(center);
-    @include justify-content(center);
-    @include flex-direction(column);
+    // @extend %flex;
+    // @include align-items(center);
+    // @include justify-content(center);
+    // @include flex-direction(column);
 
 }
 
+// the whole page
 #about-me-page{
 
   *{
     color: black;
   }
 
+  #about-me-page-container{
+    width:100%;
+    position: absolute;
+    height:600px;
+    top:50%;
+    @include transform(translateY(-50%));
+    overflow: visible;
+
+
+  //HEADER OF THE PAGE
   .about-header{
+    position: absolute;
+    top:0;
+    z-index: 1000;
     width:100%;
     background: white;
 
@@ -36,7 +50,7 @@
     }
 
     .button-holder{
-
+      height: 35px;
       @extend %flex;
       @include align-items(flex-end);
 
@@ -63,39 +77,70 @@
     }
 
 
-
   }
 
+  //THE WHOLE BODY OF THE PAGE INCLUDING THE HOBBIES
   .about-body{
-
+    position: absolute;
+    top:125px;
     margin-top:20px;
-    background:white;
-    width:100%;
-    @extend %flex;
-    // @include align-items(center);
-    @include justify-content(space-between);
 
-    .about-text-section{
-      // text-align: center;
-      width:60%;
-      margin-left:20px;
-      padding:30px 0 0 40px;
-      p{
-        font-family: 'IBM Plex Serif', serif;
-      }
-    }
+    // THE ABOUT SECTION THAT'S ROTATING
+    #about-section{
+      @include transform(rotateY(180deg));
 
-    .about-image{
-      margin-right:40px;
-      width:250px;
+      @include backface-visibility(hidden);
+      position: relative;
       height:450px;
-      background-image: url('../images/about-road-img.jpg');
-      background-repeat: no-repeat;
-      background-position: center bottom;
-      background-size: cover;
-    }
-  }
+      background:white;
+      top:0;
+      left:0;
+      width:100%;
+      @extend %flex;
+      @include justify-content(space-between);
+
+      .about-text-section{
+        // text-align: center;
+        width:60%;
+        margin-left:20px;
+        padding:30px 0 0 40px;
+        p{
+          font-family: 'IBM Plex Serif', serif;
+        }
+      }
+
+      .about-image{
+        width:300px;
+        height:450px;
+        background-image: url('../images/about-road-img.jpg');
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        background-size: cover;
+      }
+    } // end of #about-section
+
+    #hobbies-section{
+      perspective: 100px;
+      backface-visibility: hidden;
+      height:450px;
+      width:100%;
+      top:0;
+      position: absolute;
+      background:white;
+
+      #hobbies-body{
+        transform-style: preserve-3d;
+        @include transform(rotateY(40deg) rotateX(40deg));
+        @include backface-visibility(hidden);
+        background:red;
+        height:100px;
+        width:100px;
+      }
+    } //end of #hobbies section
+
+  } //end of #about-body
 
 
+}// end of #about me page container
 
-}
+} //end of #about-me-page

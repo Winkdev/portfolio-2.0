@@ -499,7 +499,7 @@ input[type="checkbox"], input[type="radio"] {
   }
 }
 /* line 1, ../sass/partials/_mixins.scss */
-#main-page-container, #welcome-container, .page, #about-me-page .about-header .button-holder, #about-me-page .about-body {
+#main-page-container, #welcome-container, #about-me-page #about-me-page-container .about-header .button-holder, #about-me-page #about-me-page-container .about-body #about-section {
   display: -webkit-box;
   display: -moz-box;
   display: -webkit-flex;
@@ -791,25 +791,34 @@ html, body {
   top: 20px;
   text-align: left;
   z-index: 1 !important;
-  -webkit-align-items: center;
-  align-items: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-flex-direction: column;
-  flex-direction: column;
 }
 
-/* line 19, ../sass/partials/_pages.scss */
+/* line 20, ../sass/partials/_pages.scss */
 #about-me-page * {
   color: black;
 }
-/* line 23, ../sass/partials/_pages.scss */
-#about-me-page .about-header {
+/* line 24, ../sass/partials/_pages.scss */
+#about-me-page #about-me-page-container {
+  width: 100%;
+  position: absolute;
+  height: 600px;
+  top: 50%;
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  overflow: visible;
+}
+/* line 34, ../sass/partials/_pages.scss */
+#about-me-page #about-me-page-container .about-header {
+  position: absolute;
+  top: 0;
+  z-index: 1000;
   width: 100%;
   background: white;
 }
-/* line 27, ../sass/partials/_pages.scss */
-#about-me-page .about-header .about-title {
+/* line 41, ../sass/partials/_pages.scss */
+#about-me-page #about-me-page-container .about-header .about-title {
   text-transform: uppercase;
   letter-spacing: 45px;
   padding: 20px 0;
@@ -819,56 +828,96 @@ html, body {
   width: 100%;
   text-align: center;
 }
-/* line 38, ../sass/partials/_pages.scss */
-#about-me-page .about-header .button-holder {
+/* line 52, ../sass/partials/_pages.scss */
+#about-me-page #about-me-page-container .about-header .button-holder {
+  height: 35px;
   -webkit-align-items: flex-end;
   align-items: flex-end;
 }
-/* line 43, ../sass/partials/_pages.scss */
-#about-me-page .about-header .button-holder * {
+/* line 57, ../sass/partials/_pages.scss */
+#about-me-page #about-me-page-container .about-header .button-holder * {
   cursor: pointer;
   text-align: center;
 }
-/* line 48, ../sass/partials/_pages.scss */
-#about-me-page .about-header .button-holder .left-button {
+/* line 62, ../sass/partials/_pages.scss */
+#about-me-page #about-me-page-container .about-header .button-holder .left-button {
   font-weight: bold;
   padding: 5px;
   width: 50%;
   font-size: 1.2em;
   background: #6e798d;
 }
-/* line 56, ../sass/partials/_pages.scss */
-#about-me-page .about-header .button-holder .right-button {
+/* line 70, ../sass/partials/_pages.scss */
+#about-me-page #about-me-page-container .about-header .button-holder .right-button {
   font-weight: bold;
   padding: 5px;
   width: 50%;
   background: #bcc1c6;
 }
-/* line 69, ../sass/partials/_pages.scss */
-#about-me-page .about-body {
+/* line 83, ../sass/partials/_pages.scss */
+#about-me-page #about-me-page-container .about-body {
+  position: absolute;
+  top: 125px;
   margin-top: 20px;
+}
+/* line 89, ../sass/partials/_pages.scss */
+#about-me-page #about-me-page-container .about-body #about-section {
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: relative;
+  height: 450px;
   background: white;
+  top: 0;
+  left: 0;
   width: 100%;
   -webkit-justify-content: space-between;
   justify-content: space-between;
 }
-/* line 78, ../sass/partials/_pages.scss */
-#about-me-page .about-body .about-text-section {
+/* line 102, ../sass/partials/_pages.scss */
+#about-me-page #about-me-page-container .about-body #about-section .about-text-section {
   width: 60%;
   margin-left: 20px;
   padding: 30px 0 0 40px;
 }
-/* line 83, ../sass/partials/_pages.scss */
-#about-me-page .about-body .about-text-section p {
+/* line 107, ../sass/partials/_pages.scss */
+#about-me-page #about-me-page-container .about-body #about-section .about-text-section p {
   font-family: 'IBM Plex Serif', serif;
 }
-/* line 88, ../sass/partials/_pages.scss */
-#about-me-page .about-body .about-image {
-  margin-right: 40px;
-  width: 250px;
+/* line 112, ../sass/partials/_pages.scss */
+#about-me-page #about-me-page-container .about-body #about-section .about-image {
+  width: 300px;
   height: 450px;
   background-image: url("../images/about-road-img.jpg");
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: cover;
+}
+/* line 122, ../sass/partials/_pages.scss */
+#about-me-page #about-me-page-container .about-body #hobbies-section {
+  perspective: 100px;
+  backface-visibility: hidden;
+  height: 450px;
+  width: 100%;
+  top: 0;
+  position: absolute;
+  background: white;
+}
+/* line 131, ../sass/partials/_pages.scss */
+#about-me-page #about-me-page-container .about-body #hobbies-section #hobbies-body {
+  transform-style: preserve-3d;
+  -moz-transform: rotateY(40deg) rotateX(40deg);
+  -ms-transform: rotateY(40deg) rotateX(40deg);
+  -webkit-transform: rotateY(40deg) rotateX(40deg);
+  transform: rotateY(40deg) rotateX(40deg);
+  -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  background: red;
+  height: 100px;
+  width: 100px;
 }
