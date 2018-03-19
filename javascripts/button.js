@@ -19,9 +19,11 @@ $(document).ready(function(){
       var star, randomHW, randomStar;
       for(var i = 0; i < numberOfStars; i++){
 
-        star = [
+        star =
+        [
           "<div class='stars-blue' id='star"+i+"'></div>",
-          "<div class='stars-white' id='star"+i+"'></div>"];
+          "<div class='stars-white' id='star"+i+"'></div>"
+        ];
         randomLeft = Math.floor(Math.random() * docWidth);
         randomTop = Math.floor(Math.random() * docHeight);
         randomHW = Math.floor(Math.random() * 2) + 1;
@@ -39,7 +41,7 @@ $(document).ready(function(){
       }
     }
 
-    starsGenerator("#main-page-container",100);
+    starsGenerator("#main-page-container",50);
 
     function playButtonSound(){
       buttonSound.currentTime = 0;
@@ -320,7 +322,26 @@ $(document).ready(function(){
 
     }); // end of #animated-button.click
 
+    //animations in the About me page
+    $(".left-button").click(function(){
+      $(this).animate({
+        fontSize: "1.2em",
+      },400);
 
+      $(".right-button").animate({
+        fontSize: "1em",
+      },200);
+    });
+
+    $(".right-button").click(function(){
+      $(this).animate({
+        fontSize: "1.2em",
+      },400);
+
+      $(".left-button").animate({
+        fontSize: "1em",
+      },200);
+    });
 });
 
 /*

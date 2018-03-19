@@ -175,11 +175,13 @@ html,body{
   // @include animation(starGlow-white, 3s, ease-out, infinite, running, 0);
   background:white;
   opacity: 0.6;
+  box-shadow: 0 0 5px 1px white;
 }
 
 .stars-blue{
   // @include animation(starGlow-blue, 3s, ease-out, infinite, running, 0);
   background:$blue-star;
+  box-shadow: 0 0 5px 1px $blue-star;
   opacity: 1;
 }
 
