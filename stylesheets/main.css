@@ -899,25 +899,16 @@ html, body {
 }
 /* line 122, ../sass/partials/_pages.scss */
 #about-me-page #about-me-page-container .about-body #hobbies-section {
-  perspective: 100px;
-  backface-visibility: hidden;
-  height: 450px;
   width: 100%;
-  top: 0;
-  position: absolute;
-  background: white;
-}
-/* line 131, ../sass/partials/_pages.scss */
-#about-me-page #about-me-page-container .about-body #hobbies-section #hobbies-body {
-  transform-style: preserve-3d;
-  -moz-transform: rotateY(40deg) rotateX(40deg);
-  -ms-transform: rotateY(40deg) rotateX(40deg);
-  -webkit-transform: rotateY(40deg) rotateX(40deg);
-  transform: rotateY(40deg) rotateX(40deg);
+  background: red;
+  -moz-transform: rotateY(0);
+  -ms-transform: rotateY(0);
+  -webkit-transform: rotateY(0);
+  transform: rotateY(0);
   -moz-backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  background: red;
-  height: 100px;
-  width: 100px;
+  height: 450px;
+  top: 0;
+  position: absolute;
 }

@@ -87,7 +87,7 @@
 
     // THE ABOUT SECTION THAT'S ROTATING
     #about-section{
-      @include transform(rotateY(180deg));
+      @include transform(rotateY(180deg) );
 
       @include backface-visibility(hidden);
       position: relative;
@@ -120,22 +120,14 @@
     } // end of #about-section
 
     #hobbies-section{
-      perspective: 100px;
-      backface-visibility: hidden;
-      height:450px;
       width:100%;
+      background:red;
+      @include transform(rotateY(0) );
+      @include backface-visibility(hidden);
+      // backface-visibility: hidden;
+      height:450px;
       top:0;
       position: absolute;
-      background:white;
-
-      #hobbies-body{
-        transform-style: preserve-3d;
-        @include transform(rotateY(40deg) rotateX(40deg));
-        @include backface-visibility(hidden);
-        background:red;
-        height:100px;
-        width:100px;
-      }
     } //end of #hobbies section
 
   } //end of #about-body
