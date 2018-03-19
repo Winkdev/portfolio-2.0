@@ -6,8 +6,61 @@
     top:20px;
     text-align: left;
     z-index: 1!important;
-    h1{
-      font-size:2.5em;
-      text-align: left!important;
+    border: 1px solid white;
+    @extend %flex;
+    @include align-items(center);
+    @include justify-content(center);
+    @include flex-direction(column);
+
+}
+
+#about-me-page{
+
+  *{
+    color: black;
+  }
+
+  .about-header{
+    width:100%;
+    background: white;
+
+    .about-title{
+      text-transform: uppercase;
+      letter-spacing: 45px;
+      padding: 10px 0;
+      color:black;
+      font-size: 2em;
+      font-weight: bold;
+      width:100%;
+      text-align: center;
     }
+
+    .left-button{
+      width:49%;
+      display: inline-block;
+      background-color: $blue-gray;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .right-button{
+      width:49%;
+      display: inline-block;
+      background: $light-gray;
+      font-weight: bold;
+      text-align: center;
+    }
+
+  }
+
+  .about-body{
+    width:100%;
+    background: white;
+
+    .about-image{
+      background-image: url();
+      height:100%;
+    }
+  }
+
 }

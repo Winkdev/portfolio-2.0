@@ -432,41 +432,74 @@ input[type="checkbox"], input[type="radio"] {
   animation-timing-function: ease-out;
 }
 
-@-webkit-keyframes starGlow {
+@-webkit-keyframes starGlow-white {
   0% {
-    box-shadow: 0 0 0px 0px #fff;
+    box-shadow: 0 0 0px 0px white;
   }
   50% {
-    box-shadow: 0 0 5px 0px #fff;
+    box-shadow: 0 0 8px 0px white;
   }
   100% {
-    box-shadow: 0 0 0px 0px #fff;
+    box-shadow: 0 0 0px 0px white;
   }
 }
-@-moz-keyframes starGlow {
+@-moz-keyframes starGlow-white {
   0% {
-    box-shadow: 0 0 0px 0px #fff;
+    box-shadow: 0 0 0px 0px white;
   }
   50% {
-    box-shadow: 0 0 5px 0px #fff;
+    box-shadow: 0 0 8px 0px white;
   }
   100% {
-    box-shadow: 0 0 0px 0px #fff;
+    box-shadow: 0 0 0px 0px white;
   }
 }
-@keyframes starGlow {
+@keyframes starGlow-white {
   0% {
-    box-shadow: 0 0 0px 0px #fff;
+    box-shadow: 0 0 0px 0px white;
   }
   50% {
-    box-shadow: 0 0 5px 0px #fff;
+    box-shadow: 0 0 8px 0px white;
   }
   100% {
-    box-shadow: 0 0 0px 0px #fff;
+    box-shadow: 0 0 0px 0px white;
+  }
+}
+@-webkit-keyframes starGlow-blue {
+  0% {
+    box-shadow: 0 0 0px 0px blue;
+  }
+  50% {
+    box-shadow: 0 0 8px 0px blue;
+  }
+  100% {
+    box-shadow: 0 0 0px 0px blue;
+  }
+}
+@-moz-keyframes starGlow-blue {
+  0% {
+    box-shadow: 0 0 0px 0px blue;
+  }
+  50% {
+    box-shadow: 0 0 8px 0px blue;
+  }
+  100% {
+    box-shadow: 0 0 0px 0px blue;
+  }
+}
+@keyframes starGlow-blue {
+  0% {
+    box-shadow: 0 0 0px 0px blue;
+  }
+  50% {
+    box-shadow: 0 0 8px 0px blue;
+  }
+  100% {
+    box-shadow: 0 0 0px 0px blue;
   }
 }
 /* line 1, ../sass/partials/_mixins.scss */
-#main-page-container, #welcome-container {
+#main-page-container, #welcome-container, .page {
   display: -webkit-box;
   display: -moz-box;
   display: -webkit-flex;
@@ -685,89 +718,63 @@ html, body {
 }
 
 /* line 174, ../sass/partials/_index.scss */
-.stars {
-  -webkit-animation-delay: 0;
-  -webkit-animation-duration: 3s;
-  -webkit-animation-name: starGlow;
-  -webkit-animation-fill-mode: forwards;
-  /* this prevents the animation from restarting! */
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-play-state: running;
-  -webkit-animation-timing-function: ease-out;
-  -moz-animation-delay: 0;
-  -moz-animation-duration: 3s;
-  -moz-animation-name: starGlow;
-  -moz-animation-fill-mode: forwards;
-  /* this prevents the animation from restarting! */
-  -moz-animation-iteration-count: infinite;
-  -moz-animation-play-state: running;
-  -moz-animation-timing-function: ease-out;
-  -o-animation-delay: 0;
-  -o-animation-duration: 3s;
-  -o-animation-name: starGlow;
-  -o-animation-fill-mode: forwards;
-  /* this prevents the animation from restarting! */
-  -o-animation-iteration-count: infinite;
-  -o-animation-play-state: running;
-  -o-animation-timing-function: ease-out;
-  animation-delay: 0;
-  animation-duration: 3s;
-  animation-name: starGlow;
-  animation-fill-mode: forwards;
-  /* this prevents the animation from restarting! */
-  animation-iteration-count: infinite;
-  animation-play-state: running;
-  animation-timing-function: ease-out;
+.stars-white {
   background: white;
-  opacity: 0.5;
+  opacity: 0.6;
+}
+
+/* line 180, ../sass/partials/_index.scss */
+.stars-blue {
+  background: #C6EEF8;
+  opacity: 1;
 }
 
 @media all and (max-width: 650px) {
-  /* line 184, ../sass/partials/_index.scss */
+  /* line 190, ../sass/partials/_index.scss */
   #welcome-container p {
     text-align: center;
     font-size: 1em !important;
   }
-  /* line 189, ../sass/partials/_index.scss */
+  /* line 195, ../sass/partials/_index.scss */
   #welcome-container #welcome {
     font-size: 1.8em !important;
   }
-  /* line 193, ../sass/partials/_index.scss */
+  /* line 199, ../sass/partials/_index.scss */
   #welcome-container #animated-button {
     width: 60px;
     height: 60px;
     font-size: 0.6em;
   }
 
-  /* line 200, ../sass/partials/_index.scss */
+  /* line 206, ../sass/partials/_index.scss */
   .dots {
     display: none;
   }
 
-  /* line 204, ../sass/partials/_index.scss */
+  /* line 210, ../sass/partials/_index.scss */
   .page {
     width: 100%;
     height: 100%;
   }
 }
 @media all and (max-width: 300px) {
-  /* line 214, ../sass/partials/_index.scss */
+  /* line 220, ../sass/partials/_index.scss */
   #welcome-container p {
     text-align: center;
     font-size: 0.8em !important;
   }
-  /* line 219, ../sass/partials/_index.scss */
+  /* line 225, ../sass/partials/_index.scss */
   #welcome-container #welcome {
     font-size: 1.5em !important;
     text-align-last: center;
   }
 
-  /* line 225, ../sass/partials/_index.scss */
+  /* line 231, ../sass/partials/_index.scss */
   .dots {
     display: none;
   }
 
-  /* line 229, ../sass/partials/_index.scss */
+  /* line 235, ../sass/partials/_index.scss */
   .page {
     width: 100%;
     height: 100%;
@@ -782,9 +789,58 @@ html, body {
   top: 20px;
   text-align: left;
   z-index: 1 !important;
+  border: 1px solid white;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-flex-direction: column;
+  flex-direction: column;
 }
-/* line 9, ../sass/partials/_pages.scss */
-.page h1 {
-  font-size: 2.5em;
-  text-align: left !important;
+
+/* line 19, ../sass/partials/_pages.scss */
+#about-me-page * {
+  color: black;
+}
+/* line 23, ../sass/partials/_pages.scss */
+#about-me-page .about-header {
+  width: 100%;
+  background: white;
+}
+/* line 27, ../sass/partials/_pages.scss */
+#about-me-page .about-header .about-title {
+  text-transform: uppercase;
+  letter-spacing: 45px;
+  padding: 10px 0;
+  color: black;
+  font-size: 2em;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+}
+/* line 38, ../sass/partials/_pages.scss */
+#about-me-page .about-header .left-button {
+  width: 49%;
+  display: inline-block;
+  background-color: #6e798d;
+  font-weight: bold;
+  text-align: center;
+}
+/* line 46, ../sass/partials/_pages.scss */
+#about-me-page .about-header .right-button {
+  width: 49%;
+  display: inline-block;
+  background: #bcc1c6;
+  font-weight: bold;
+  text-align: center;
+}
+/* line 56, ../sass/partials/_pages.scss */
+#about-me-page .about-body {
+  width: 100%;
+  background: white;
+}
+/* line 60, ../sass/partials/_pages.scss */
+#about-me-page .about-body .about-image {
+  background-image: url();
+  height: 100%;
 }

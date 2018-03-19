@@ -16,15 +16,18 @@ $(document).ready(function(){
     var randomLeft, randomTop;
 
     function starsGenerator(elem, numberOfStars){
-      var star, randomHW;
+      var star, randomHW, randomStar;
       for(var i = 0; i < numberOfStars; i++){
 
-        star = "<div class='stars' id='star"+i+"'></div>";
+        star = [
+          "<div class='stars-blue' id='star"+i+"'></div>",
+          "<div class='stars-white' id='star"+i+"'></div>"];
         randomLeft = Math.floor(Math.random() * docWidth);
         randomTop = Math.floor(Math.random() * docHeight);
-        randomHW = Math.floor(Math.random() * 4) + 1;
+        randomHW = Math.floor(Math.random() * 2) + 1;
+        randomStar = Math.round(Math.random());
 
-        $(elem).append(star);
+        $(elem).append(star[randomStar]);
         $("#star"+i).css({
           'border-radius':'100%',
           'position':'absolute',

@@ -171,14 +171,20 @@ html,body{
     opacity:0.8;
 }
 
-.stars{
-  @include animation(starGlow, 3s, ease-out, infinite, running, 0);
+.stars-white{
+  // @include animation(starGlow-white, 3s, ease-out, infinite, running, 0);
   background:white;
-  opacity: 0.5;
+  opacity: 0.6;
+}
+
+.stars-blue{
+  // @include animation(starGlow-blue, 3s, ease-out, infinite, running, 0);
+  background:$blue-star;
+  opacity: 1;
 }
 
 
-@media all and (max-width: 650px){
+@media all and (max-width: $ipad){
   #welcome-container{
 
     p{
@@ -208,7 +214,7 @@ html,body{
 }
 
 
-@media all and (max-width: 300px){
+@media all and (max-width: $phone){
   #welcome-container{
 
     p{
