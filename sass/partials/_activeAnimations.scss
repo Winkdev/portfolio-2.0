@@ -1,14 +1,14 @@
 @include keyframe(twirl){
-    from {transform: rotate(0);}
-    to {
+    0% {transform: rotate(0);}
+    100% {
         transform: rotate(360deg);
     }
 }
 
 
 @include keyframe(twirl-backwards){
-    from {transform: rotate(0);}
-    to {
+    0% {transform: rotate(0);}
+    100% {
         transform: rotate(-360deg);
     }
 }
@@ -50,4 +50,63 @@
     100%{
       box-shadow: 0 0 0px 0px blue;
     }
+}
+
+.rotate0tom180{
+    @include animation(rotate0tom180, 0.5s, ease-out,1, running, 0s);
+
+}
+
+.rotate0to180{
+    @include animation(rotate0to180, 0.5s, ease-out,1, running, 0s);
+
+}
+
+.rotate180to0{
+    @include animation(rotate180to0, 0.5s, ease-out,1, running, 0s);
+
+}
+
+.rotatem180to0{
+    @include animation(rotatem180to0, 0.5s, ease-out,1, running, 0);
+
+}
+
+
+
+@include keyframe(rotate0tom180){
+  0%{
+    @include transform(rotateY(0deg));
+  }
+
+  100%{
+    @include transform(rotateY(-180deg));
+  }
+}
+
+@include keyframe(rotate0to180){
+  0%{
+    @include transform(rotateY(0deg));
+  }
+    100%{
+      @include transform(rotateY(180deg));
+    }
+}
+
+@include keyframe(rotate180to0){
+  0%{
+    @include transform(rotateY(180deg));
+  }
+  100%{
+    @include transform(rotateY(0deg));
+  }
+}
+
+@include keyframe(rotatem180to0){
+  0%{
+    @include transform(rotateY(-180deg));
+  }
+  100%{
+    @include transform(rotateY(0deg));
+  }
 }

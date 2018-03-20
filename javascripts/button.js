@@ -324,9 +324,18 @@ $(document).ready(function(){
 
     //animations in the About me page
     $(".left-button").click(function(){
+
+      //3D flip effect {
+      $("#about-section").removeClass();
+      $("#hobbies-section").removeClass();
+
+      $("#about-section").addClass('rotate180to0');
+      $("#hobbies-section").addClass('rotate0tom180');
+      // }
+
       $(this).animate({
         fontSize: "1.2em",
-      },400);
+      },200);
 
       $(".right-button").animate({
         fontSize: "1em",
@@ -334,9 +343,18 @@ $(document).ready(function(){
     });
 
     $(".right-button").click(function(){
+
+      //3D flip effect {
+      $("#about-section").removeClass();
+      $("#hobbies-section").removeClass();
+
+      $("#about-section").addClass('rotate0to180');
+      $("#hobbies-section").addClass('rotatem180to0');
+      //}
+
       $(this).animate({
         fontSize: "1.2em",
-      },400);
+      },200);
 
       $(".left-button").animate({
         fontSize: "1em",

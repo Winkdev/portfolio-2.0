@@ -277,50 +277,50 @@ input[type="checkbox"], input[type="radio"] {
 }
 
 @-webkit-keyframes twirl {
-  from {
+  0% {
     transform: rotate(0);
   }
-  to {
+  100% {
     transform: rotate(360deg);
   }
 }
 @-moz-keyframes twirl {
-  from {
+  0% {
     transform: rotate(0);
   }
-  to {
+  100% {
     transform: rotate(360deg);
   }
 }
 @keyframes twirl {
-  from {
+  0% {
     transform: rotate(0);
   }
-  to {
+  100% {
     transform: rotate(360deg);
   }
 }
 @-webkit-keyframes twirl-backwards {
-  from {
+  0% {
     transform: rotate(0);
   }
-  to {
+  100% {
     transform: rotate(-360deg);
   }
 }
 @-moz-keyframes twirl-backwards {
-  from {
+  0% {
     transform: rotate(0);
   }
-  to {
+  100% {
     transform: rotate(-360deg);
   }
 }
 @keyframes twirl-backwards {
-  from {
+  0% {
     transform: rotate(0);
   }
-  to {
+  100% {
     transform: rotate(-360deg);
   }
 }
@@ -496,6 +496,318 @@ input[type="checkbox"], input[type="radio"] {
   }
   100% {
     box-shadow: 0 0 0px 0px blue;
+  }
+}
+/* line 55, ../sass/partials/_activeAnimations.scss */
+.rotate0tom180 {
+  -webkit-animation-delay: 0s;
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-name: rotate0tom180;
+  -webkit-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-play-state: running;
+  -webkit-animation-timing-function: ease-out;
+  -moz-animation-delay: 0s;
+  -moz-animation-duration: 0.5s;
+  -moz-animation-name: rotate0tom180;
+  -moz-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -moz-animation-iteration-count: 1;
+  -moz-animation-play-state: running;
+  -moz-animation-timing-function: ease-out;
+  -o-animation-delay: 0s;
+  -o-animation-duration: 0.5s;
+  -o-animation-name: rotate0tom180;
+  -o-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -o-animation-iteration-count: 1;
+  -o-animation-play-state: running;
+  -o-animation-timing-function: ease-out;
+  animation-delay: 0s;
+  animation-duration: 0.5s;
+  animation-name: rotate0tom180;
+  animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  animation-iteration-count: 1;
+  animation-play-state: running;
+  animation-timing-function: ease-out;
+}
+
+/* line 60, ../sass/partials/_activeAnimations.scss */
+.rotate0to180 {
+  -webkit-animation-delay: 0s;
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-name: rotate0to180;
+  -webkit-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-play-state: running;
+  -webkit-animation-timing-function: ease-out;
+  -moz-animation-delay: 0s;
+  -moz-animation-duration: 0.5s;
+  -moz-animation-name: rotate0to180;
+  -moz-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -moz-animation-iteration-count: 1;
+  -moz-animation-play-state: running;
+  -moz-animation-timing-function: ease-out;
+  -o-animation-delay: 0s;
+  -o-animation-duration: 0.5s;
+  -o-animation-name: rotate0to180;
+  -o-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -o-animation-iteration-count: 1;
+  -o-animation-play-state: running;
+  -o-animation-timing-function: ease-out;
+  animation-delay: 0s;
+  animation-duration: 0.5s;
+  animation-name: rotate0to180;
+  animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  animation-iteration-count: 1;
+  animation-play-state: running;
+  animation-timing-function: ease-out;
+}
+
+/* line 65, ../sass/partials/_activeAnimations.scss */
+.rotate180to0 {
+  -webkit-animation-delay: 0s;
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-name: rotate180to0;
+  -webkit-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-play-state: running;
+  -webkit-animation-timing-function: ease-out;
+  -moz-animation-delay: 0s;
+  -moz-animation-duration: 0.5s;
+  -moz-animation-name: rotate180to0;
+  -moz-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -moz-animation-iteration-count: 1;
+  -moz-animation-play-state: running;
+  -moz-animation-timing-function: ease-out;
+  -o-animation-delay: 0s;
+  -o-animation-duration: 0.5s;
+  -o-animation-name: rotate180to0;
+  -o-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -o-animation-iteration-count: 1;
+  -o-animation-play-state: running;
+  -o-animation-timing-function: ease-out;
+  animation-delay: 0s;
+  animation-duration: 0.5s;
+  animation-name: rotate180to0;
+  animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  animation-iteration-count: 1;
+  animation-play-state: running;
+  animation-timing-function: ease-out;
+}
+
+/* line 70, ../sass/partials/_activeAnimations.scss */
+.rotatem180to0 {
+  -webkit-animation-delay: 0;
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-name: rotatem180to0;
+  -webkit-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-play-state: running;
+  -webkit-animation-timing-function: ease-out;
+  -moz-animation-delay: 0;
+  -moz-animation-duration: 0.5s;
+  -moz-animation-name: rotatem180to0;
+  -moz-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -moz-animation-iteration-count: 1;
+  -moz-animation-play-state: running;
+  -moz-animation-timing-function: ease-out;
+  -o-animation-delay: 0;
+  -o-animation-duration: 0.5s;
+  -o-animation-name: rotatem180to0;
+  -o-animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  -o-animation-iteration-count: 1;
+  -o-animation-play-state: running;
+  -o-animation-timing-function: ease-out;
+  animation-delay: 0;
+  animation-duration: 0.5s;
+  animation-name: rotatem180to0;
+  animation-fill-mode: forwards;
+  /* this prevents the animation from restarting! */
+  animation-iteration-count: 1;
+  animation-play-state: running;
+  animation-timing-function: ease-out;
+}
+
+@-webkit-keyframes rotate0tom180 {
+  0% {
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+  100% {
+    -moz-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+  }
+}
+@-moz-keyframes rotate0tom180 {
+  0% {
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+  100% {
+    -moz-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+  }
+}
+@keyframes rotate0tom180 {
+  0% {
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+  100% {
+    -moz-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+  }
+}
+@-webkit-keyframes rotate0to180 {
+  0% {
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+  100% {
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+  }
+}
+@-moz-keyframes rotate0to180 {
+  0% {
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+  100% {
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+  }
+}
+@keyframes rotate0to180 {
+  0% {
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+  100% {
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+  }
+}
+@-webkit-keyframes rotate180to0 {
+  0% {
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+  }
+  100% {
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+}
+@-moz-keyframes rotate180to0 {
+  0% {
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+  }
+  100% {
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+}
+@keyframes rotate180to0 {
+  0% {
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+  }
+  100% {
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+}
+@-webkit-keyframes rotatem180to0 {
+  0% {
+    -moz-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+  }
+  100% {
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+}
+@-moz-keyframes rotatem180to0 {
+  0% {
+    -moz-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+  }
+  100% {
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+}
+@keyframes rotatem180to0 {
+  0% {
+    -moz-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+  }
+  100% {
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
   }
 }
 /* line 1, ../sass/partials/_mixins.scss */
@@ -859,13 +1171,18 @@ html, body {
   position: absolute;
   top: 125px;
   margin-top: 20px;
+  perspective: 2000px;
+  perspective-origin: top;
 }
-/* line 89, ../sass/partials/_pages.scss */
+/* line 90, ../sass/partials/_pages.scss */
 #about-me-page #about-me-page-container .about-body #about-section {
-  -moz-transform: rotateY(180deg);
-  -ms-transform: rotateY(180deg);
-  -webkit-transform: rotateY(180deg);
-  transform: rotateY(180deg);
+  -moz-transform: rotateX(0deg);
+  -ms-transform: rotateX(0deg);
+  -webkit-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+  -moz-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
   -moz-backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
@@ -878,7 +1195,7 @@ html, body {
   -webkit-justify-content: space-between;
   justify-content: space-between;
 }
-/* line 102, ../sass/partials/_pages.scss */
+/* line 103, ../sass/partials/_pages.scss */
 #about-me-page #about-me-page-container .about-body #about-section .about-text-section {
   width: 60%;
   margin-left: 20px;
@@ -899,15 +1216,18 @@ html, body {
 }
 /* line 122, ../sass/partials/_pages.scss */
 #about-me-page #about-me-page-container .about-body #hobbies-section {
-  width: 100%;
-  background: red;
-  -moz-transform: rotateY(0);
-  -ms-transform: rotateY(0);
-  -webkit-transform: rotateY(0);
-  transform: rotateY(0);
+  -moz-transform: rotateY(-180deg);
+  -ms-transform: rotateY(-180deg);
+  -webkit-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+  -moz-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
   -moz-backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  width: 100%;
+  background: white;
   height: 450px;
   top: 0;
   position: absolute;
