@@ -1,27 +1,34 @@
 <!doctype html>
 <html lang="en">
     <head charset="utf-8">
-        <title>Rami Alayan | Welcome to my portfolio</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta charset="utf-8"/>
+      <title>Rami Alayan | Welcome to my portfolio</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
 
-        <!-- Latest compiled and minified CSS -->
-        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+      <!-- jQuery library -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-        <!-- jQuery library -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <!-- CSS -->
+      <link href="stylesheets/main.css" rel="stylesheet" type="text/css" />
 
-        <!-- Latest compiled JavaScript -->
-        <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+      <!--GOOGLE FONTS-->
+      <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif|Merriweather|Raleway:200|Source+Serif+Pro|Vollkorn" rel="stylesheet">
 
+      <!--FONT AWESOME-->
+      <script src="https://use.fontawesome.com/699cfd4481.js"></script>
 
-        <!-- CSS -->
-        <link href="stylesheets/main.css" rel="stylesheet" type="text/css" />
-
-        <!--GOOGLE FONTS-->
-        <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif|Merriweather|Raleway:200|Source+Serif+Pro|Vollkorn" rel="stylesheet">
     </head>
     <body>
+      <div class="loading-page">
+        <div class="mobile-message">
+          Sorry for the inconvenience. This website is not compatible with your screen yet, please try accessing it on a bigger screen.
+        </div>
 
+        <div class="loading">
+          Loading...
+        </div>
+      </div>
         <div id="main-page-container">
             <div id="welcome-container">
                 <p>RAMI ALAYAN</p>
@@ -39,19 +46,262 @@
             </div>
 
             <div id="education-page" class="page">
-                <h1> KNOWLEDGE </h1>
+
+              <div class="page-header">
+                <div class="page-title">
+                  knowledge
+                </div>
+
+              </div>
+
+              <div class="knowledge-body">
+
+                <div class="row">
+
+                  <div class="left-item">
+                    <span>HTML5</span>
+                    <div class="percentage-holder">
+                      <div class="percentage" id="html"></div>
+                    </div>
+                  </div>
+
+                  <div class="right-item">
+
+                    <div class="percentage-holder">
+                      <div class="percentage" id="css"></div>
+                    </div>
+
+                    <span>CSS3</span>
+                  </div>
+
+                </div>
+
+
+                <div class="row">
+
+                  <div class="left-item">
+                    <span>JS</span>
+                    <div class="percentage-holder">
+                      <div class="percentage" id="js"></div>
+                    </div>
+                  </div>
+
+                  <div class="right-item">
+
+                    <div class="percentage-holder">
+                      <div class="percentage" id="jquery"></div>
+                    </div>
+
+                    <span>JQUERY</span>
+                  </div>
+
+                </div>
+
+
+                <div class="row">
+
+                  <div class="left-item">
+                    <span>PHP</span>
+                    <div class="percentage-holder">
+                      <div class="percentage" id="php"></div>
+                    </div>
+                  </div>
+
+                  <div class="right-item">
+
+                    <div class="percentage-holder">
+                      <div class="percentage" id="mysql"></div>
+                    </div>
+
+                    <span>MYSQL</span>
+                  </div>
+
+                </div>
+
+
+                <div class="row">
+
+                  <div class="left-item">
+                    <span>GIT/GITHUB</span>
+                    <div class="percentage-holder">
+                      <div class="percentage" id="git"></div>
+                    </div>
+                  </div>
+
+                  <div class="right-item">
+
+                    <div class="percentage-holder">
+                      <div class="percentage" id="sass"></div>
+                    </div>
+
+                    <span>SASS</span>
+                  </div>
+
+                </div>
+
+
+                <div class="row">
+
+                  <div class="left-item">
+                    <span>PHOTOSHOP</span>
+                    <div class="percentage-holder">
+                      <div class="percentage" id="photoshop"></div>
+                    </div>
+                  </div>
+
+                  <div class="right-item">
+
+                    <div class="percentage-holder">
+                      <div class="percentage" id="bootstrap"></div>
+                    </div>
+
+                    <span>BOOTSTRAP</span>
+                  </div>
+
+                </div>
+
+              </div>
 
             </div>
+
             <div id="experience-page" class="page">
-                <h1> EXPERIENCE </h1>
-            </div>
-            <div id="hire-me-page" class="page">
-                <h1 class="header"> CONTACT ME </h1>
-                <div id="contact-info">
-                  <img id="me" src=""/>
-                  <!-- <span>RAMI.ALAYAN@LIVE.COM</span>
-                  <span>+961 78905679</span> -->
+              <div class="page-header">
+                <div class="page-title">
+                  experience
                 </div>
+              </div>
+
+                <div class="experience-body">
+                  <div class="experience-text">
+
+                  <div class="kidzmondo">
+                    <p class="exp-title">Kidzmondo, Biel (2015 -2017)</p>
+
+                    <p>
+                      Throughout my 2 years in kidsmondo, I had two different roles, one as an edutainor, where I educated children through play and activities.
+                    </p>
+
+                    <p>
+                      The second as an entertainer, which involved various singing, dancing, and instrumental performances(guitar). I also took worked with the content department for innovational ideas, and event openings.
+                    </p>
+
+                    <p>
+                      This role has taught me to be very focused, especially that I was working with a large number of children. It has taught me patience, how to multitask, dealing well under pressure and has further increased my communication skills.
+                    </p>
+
+                    <div class="reference">
+                      <p>Reference:</p>
+
+                      <p>Mr. Wehbe - (961) 3003528</p>
+                    </div>
+                  </div>
+
+                  <div class="waiter">
+                    <p class="exp-title">Trillion lounge bar (2015-2016)</p>
+
+                    <p>
+                      My job role at Trillion lounge bar, was as a waiter, where I served food and beverages. I gained a variety of skills as well as improving on existing ones, such as: memorizing (orders), organizing, time management and being time efficient, due to giving my time to each customer, while keeping track of time for others.
+                    </p>
+
+                    <div class="reference">
+                      <p>Reference:</p>
+
+                      <p>Mr. Michel Mourad - (961) 76018038</p>
+                    </div>
+
+                  </div>
+                </div>
+
+                  <div class="extra">
+                    <p class="quote"><i>“Choose a job you love and you will never have to work a day in your life” - Conficius</i></p>
+
+                    <p class="end">
+                      Despite my various work experiences that are far from my area of expertise, I have always been passionate about programming, and would love to further develop my skills at every opportunity that I get.
+                    </p>
+                  </div>
+
+                </div>
+
+
+            </div>
+
+
+            <div id="hire-me-page" class="page">
+              <!--
+                Credits for the lading animation
+
+              Some other nice animations :
+
+              - https://codepen.io/adonisk/pen/vghsm
+              - https://codepen.io/adonisk/pen/vghsm
+              - https://codepen.io/m412c0/pen/Lhzer
+
+              */ -->
+              <div class="load-wrapp" id="#loading">
+                <div class="load-5">
+                    <div class="ring-2">
+                        <div class="ball-holder">
+                            <div class="ball"></div>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+
+              <p id="errormsg"></p>
+              <div class="about-header page-header">
+
+                <div class="page-title">
+                  contact me
+                </div>
+              </div>
+              <div class="contact-body">
+
+                  <div class="form-container">
+
+                    <h2>I'm one message away!</h2>
+                    <div class="form-item">
+                      <label for="name">Name:</label>
+                      <input id="name" type="text" name="name" placeholder="Mr/Ms.">
+                    </div>
+
+                    <div class="form-item">
+                      <label for="email">E-Mail: </label>
+                      <input id="email" type="text" name="email">
+                    </div>
+
+                    <div class="form-item">
+                      <label for="message">Message: </label>
+                      <textarea id="message" type="text" rows="6" columns="200" name="message"></textarea>
+                    </div>
+
+                    <div class="form-item">
+                      <button type="button" id="submit" name="submit">SUBMIT</button>
+                    </div>
+
+                    <div class="footer-info">
+                      <span> <i class="fa fa-envelope"></i> RAMI.ALAYAN@LIVE.COM</span>
+                      <span>
+                        <span style=""> <i class="fas fa-hashtag"></i> </span>
+                          (961) 78905679
+                        </span>
+                    </div>
+
+                  <!--end of form-container-->
+                  </div>
+
+                  <div class="right-img">
+                    <p>
+                      I AM <br/>
+                      <b>PASS<span class="beige">IO</span>NATE</b>,
+                    </br><b>DED<span class="beige">ICAT</span>ED</b>,
+                      </br><b>ALIVE</b>,
+                      </br>AND <b>READY</b>
+                    </p>
+                  </div>
+
+                <!--end of contact-body-->
+              </div>
+
             </div>
 
 
@@ -61,8 +311,8 @@
               <!--THE WHOLE PAGE (HEADER AND BODY) used to center everything-->
               <div id="about-me-page-container">
 
-                <div class="about-header">
-                  <div class="about-title">
+                <div class="about-header page-header">
+                  <div class="page-title">
                     about me
                   </div>
                   <div class="button-holder">
@@ -84,13 +334,16 @@
                     <!--only the text-->
                     <div class="about-text-section">
                       <p>
-                      Hey, I'm Ramy. I'd like to call myself an aspiring front-end developer.
+                      Hey, I'm Ramy Alayan. Born and raised in Lebanon.
+                      </p></br>
+                      <p>
+                      I'd like to call myself an aspiring developer.
                       </p></br>
                       <p>My choice of programming?</br>
                       All those tiny mesmerizing details that win someone's first impression? I would love to be the guy who makes that happen! The amount of excitement everytime I acquire a new skill and learn how to put it on the field with a simple yet effective combination of functions is immeasurable.</p></br>
                       <p>Translating a customer's ideas into visuals and bringing them into life with a personal touch of mine would do more than just add a sense of satisfaction to my job.</p></br>
                       <p>Think about it. Or no. Visualize it. You can do just about anything you can imagine. </p></br>
-                      <p>I think it's more about my passion that makes me so headstrong and persistent about programming,it's about the challenge! The bigger the challenge the more stubborn I am to become a better version of myself as a developer. I simply refuse to take no for an answer!
+                      <p>I think it's more about my passion that makes me so headstrong and persistent about programming, it's about the challenge! The bigger the challenge the more stubborn I am to become a better version of myself as a developer. I simply refuse to take no for an answer.
                       </p>
                     </div>
 
@@ -100,7 +353,29 @@
                   </div>
 
                   <div id="hobbies-section">
-                      backside
+                      <div class="first-row">
+                        <div class="hobbie-item">
+                          <div class="hobbie-image-holder" style="font-size:100px;">
+                            <i class="fa fa-gamepad"></i>
+                          </div>
+                          <p>Gaming</p>
+                        </div>
+                      </div>
+                      <div class="second-row">
+                        <div class="hobbie-item second-row-item">
+                          <div class="hobbie-image-holder">
+                            <img src="images/guitar.png" alt="Guitar">
+                          </div>
+                          <p>Guitar<br>Playing</p>
+                        </div>
+
+                        <div class="hobbie-item second-row-item">
+                          <div class="hobbie-image-holder">
+                            <img src="images/microphone.png" alt="guitar">
+                          </div>
+                          <p>Singing</p>
+                        </div>
+                      </div>
                   </div>
 
                 <!--END OF ABOUT-BODY-->
@@ -108,7 +383,7 @@
             </div>
 
             <!--end of about me page container-->
-          </div>
+            </div>
 
           <!--end of about me page-->
          </div>

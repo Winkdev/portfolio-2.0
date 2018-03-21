@@ -811,7 +811,7 @@ input[type="checkbox"], input[type="radio"] {
   }
 }
 /* line 1, ../sass/partials/_mixins.scss */
-#main-page-container, #welcome-container, #about-me-page #about-me-page-container .about-header .button-holder, #about-me-page #about-me-page-container .about-body #about-section {
+.loading-page, #main-page-container, #welcome-container, .page, #about-me-page #about-me-page-container .about-header .button-holder, #about-me-page #about-me-page-container .about-body #about-section, #about-me-page #about-me-page-container .about-body #hobbies-section, #about-me-page #about-me-page-container .about-body #hobbies-section .first-row, #about-me-page #about-me-page-container .about-body #hobbies-section .second-row, #about-me-page #about-me-page-container .about-body #hobbies-section .hobbie-item, #about-me-page #about-me-page-container .about-body #hobbies-section .hobbie-item .hobbie-image-holder, #hire-me-page .contact-body, #hire-me-page .form-container, #hire-me-page .form-item, #hire-me-page .right-img, #hire-me-page .footer-info, #education-page .knowledge-body, #education-page .knowledge-body .row, #education-page .knowledge-body .row .left-item .percentage-holder, #education-page .knowledge-body .row .right-item .percentage-holder, #education-page .knowledge-body .row .left-item, #education-page .knowledge-body .row .right-item, #experience-page .experience-body .experience-text {
   display: -webkit-box;
   display: -moz-box;
   display: -webkit-flex;
@@ -819,13 +819,12 @@ input[type="checkbox"], input[type="radio"] {
   display: flex;
 }
 
-/*
-Z-INDEXES
-.menu-button: 1000
-#menu : 100!important;
-dots: 2;
-*/
-/* line 7, ../sass/partials/_index.scss */
+/* line 9, ../sass/partials/_mixins.scss */
+#hire-me-page .contact-body * {
+  font-family: 'IBM Plex Serif', serif;
+}
+
+/* line 2, ../sass/partials/_index.scss */
 * {
   padding: 0;
   margin: 0;
@@ -833,14 +832,40 @@ dots: 2;
   font-family: 'raleway', cursive;
 }
 
-/* line 18, ../sass/partials/_index.scss */
+/* line 13, ../sass/partials/_index.scss */
 html, body {
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
 
-/* line 24, ../sass/partials/_index.scss */
+/* line 19, ../sass/partials/_index.scss */
+.mobile-message {
+  color: whitesmoke;
+  display: none;
+  font-size: 1em !important;
+  padding: 20px;
+}
+
+/* line 26, ../sass/partials/_index.scss */
+.loading-page {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #171613;
+  z-index: 4000;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+/* line 36, ../sass/partials/_index.scss */
+.loading-page .loading {
+  font-size: 2em;
+  color: whitesmoke;
+}
+
+/* line 42, ../sass/partials/_index.scss */
 #main-page-container {
   background-color: #171613;
   width: 100%;
@@ -853,7 +878,7 @@ html, body {
   justify-content: center;
 }
 
-/* line 34, ../sass/partials/_index.scss */
+/* line 52, ../sass/partials/_index.scss */
 #welcome-container {
   background: transparent;
   -webkit-flex-direction: column;
@@ -867,18 +892,18 @@ html, body {
   text-transform: capitalize;
   z-index: 100;
 }
-/* line 44, ../sass/partials/_index.scss */
+/* line 62, ../sass/partials/_index.scss */
 #welcome-container p {
   font-size: 1.2em;
   color: whitesmoke;
 }
-/* line 49, ../sass/partials/_index.scss */
+/* line 67, ../sass/partials/_index.scss */
 #welcome-container p#welcome {
   font-size: 2.8em;
   letter-spacing: 5px;
 }
 
-/* line 55, ../sass/partials/_index.scss */
+/* line 73, ../sass/partials/_index.scss */
 #animated-button {
   width: 70px;
   height: 70px;
@@ -892,24 +917,24 @@ html, body {
   letter-spacing: 3px;
   z-index: 1000;
 }
-/* line 67, ../sass/partials/_index.scss */
+/* line 85, ../sass/partials/_index.scss */
 #animated-button:hover {
   cursor: pointer;
   background: black;
 }
 
-/* line 73, ../sass/partials/_index.scss */
+/* line 91, ../sass/partials/_index.scss */
 #welcome, #animated-button {
   color: whitesmoke;
 }
 
-/* line 77, ../sass/partials/_index.scss */
+/* line 95, ../sass/partials/_index.scss */
 #animated-button:focus, #animated-button:active {
   outline: 0;
 }
 
 /*THE MAIN BUTTONS*/
-/* line 83, ../sass/partials/_index.scss */
+/* line 101, ../sass/partials/_index.scss */
 #menu-button-container {
   display: none;
   overflow: visible;
@@ -917,7 +942,7 @@ html, body {
   z-index: 10000 !important;
 }
 
-/* line 90, ../sass/partials/_index.scss */
+/* line 108, ../sass/partials/_index.scss */
 .menu-button {
   overflow: visible;
   width: 0;
@@ -930,16 +955,19 @@ html, body {
   letter-spacing: 2px;
   cursor: pointer;
   border: 1px solid white;
-  text-transform: capitalize;
+  text-transform: uppercase;
   z-index: 1000 !important;
+  padding: 0 5px;
+  line-height: 21px;
+  text-align: center;
 }
 
-/* line 106, ../sass/partials/_index.scss */
+/* line 127, ../sass/partials/_index.scss */
 .menu-button:focus, .menu-button:active {
   outline: 0;
 }
 
-/* line 110, ../sass/partials/_index.scss */
+/* line 131, ../sass/partials/_index.scss */
 #menu {
   left: 50%;
   top: 50%;
@@ -953,12 +981,12 @@ html, body {
   z-index: 1000 !important;
 }
 
-/* line 120, ../sass/partials/_index.scss */
+/* line 141, ../sass/partials/_index.scss */
 #menu:hover {
   background-color: black;
 }
 
-/* line 124, ../sass/partials/_index.scss */
+/* line 145, ../sass/partials/_index.scss */
 #education {
   left: 50%;
   top: 50%;
@@ -968,7 +996,7 @@ html, body {
   transform: translate(-50%, -50%);
 }
 
-/* line 131, ../sass/partials/_index.scss */
+/* line 152, ../sass/partials/_index.scss */
 #hire-me {
   left: 50%;
   top: 50%;
@@ -978,7 +1006,7 @@ html, body {
   transform: translate(-50%, -50%);
 }
 
-/* line 137, ../sass/partials/_index.scss */
+/* line 158, ../sass/partials/_index.scss */
 #about-me {
   left: 50%;
   top: 50%;
@@ -988,7 +1016,7 @@ html, body {
   transform: translate(-50%, -50%);
 }
 
-/* line 143, ../sass/partials/_index.scss */
+/* line 164, ../sass/partials/_index.scss */
 #experience {
   left: 50%;
   top: 50%;
@@ -998,7 +1026,7 @@ html, body {
   transform: translate(-50%, -50%);
 }
 
-/* line 149, ../sass/partials/_index.scss */
+/* line 170, ../sass/partials/_index.scss */
 .dots {
   width: 10px;
   height: 10px;
@@ -1016,12 +1044,12 @@ html, body {
   z-index: 2;
 }
 
-/* line 163, ../sass/partials/_index.scss */
+/* line 184, ../sass/partials/_index.scss */
 .active {
   color: white;
 }
 
-/* line 167, ../sass/partials/_index.scss */
+/* line 188, ../sass/partials/_index.scss */
 .dim-page {
   width: 100%;
   height: 100%;
@@ -1029,66 +1057,77 @@ html, body {
   opacity: 0.8;
 }
 
-/* line 174, ../sass/partials/_index.scss */
+/* line 195, ../sass/partials/_index.scss */
 .stars-white {
   background: white;
   opacity: 0.6;
   box-shadow: 0 0 5px 1px white;
 }
 
-/* line 181, ../sass/partials/_index.scss */
+/* line 202, ../sass/partials/_index.scss */
 .stars-blue {
   background: #C6EEF8;
   box-shadow: 0 0 5px 1px #C6EEF8;
   opacity: 1;
 }
 
+@media all and (max-width: 850px) {
+  /* line 210, ../sass/partials/_index.scss */
+  .mobile-message {
+    display: block;
+  }
+
+  /* line 214, ../sass/partials/_index.scss */
+  .loading {
+    display: none;
+  }
+}
 @media all and (max-width: 650px) {
-  /* line 192, ../sass/partials/_index.scss */
+  /* line 225, ../sass/partials/_index.scss */
   #welcome-container p {
     text-align: center;
     font-size: 1em !important;
   }
-  /* line 197, ../sass/partials/_index.scss */
+  /* line 230, ../sass/partials/_index.scss */
   #welcome-container #welcome {
     font-size: 1.8em !important;
   }
-  /* line 201, ../sass/partials/_index.scss */
+  /* line 234, ../sass/partials/_index.scss */
   #welcome-container #animated-button {
     width: 60px;
     height: 60px;
     font-size: 0.6em;
   }
 
-  /* line 208, ../sass/partials/_index.scss */
+  /* line 241, ../sass/partials/_index.scss */
   .dots {
     display: none;
   }
 
-  /* line 212, ../sass/partials/_index.scss */
+  /* line 245, ../sass/partials/_index.scss */
   .page {
     width: 100%;
     height: 100%;
   }
 }
 @media all and (max-width: 300px) {
-  /* line 222, ../sass/partials/_index.scss */
+  /* line 258, ../sass/partials/_index.scss */
   #welcome-container p {
     text-align: center;
     font-size: 0.8em !important;
   }
-  /* line 227, ../sass/partials/_index.scss */
+  /* line 263, ../sass/partials/_index.scss */
   #welcome-container #welcome {
     font-size: 1.5em !important;
     text-align-last: center;
   }
 
-  /* line 233, ../sass/partials/_index.scss */
+  /* line 269, ../sass/partials/_index.scss */
   .dots {
     display: none;
   }
 
-  /* line 237, ../sass/partials/_index.scss */
+  /* line 273, ../sass/partials/_index.scss */
   .page {
     width: 100%;
     height: 100%;
@@ -1103,6 +1142,12 @@ html, body {
   top: 20px;
   text-align: left;
   z-index: 1 !important;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-flex-direction: column;
+  flex-direction: column;
 }
 
 /* line 20, ../sass/partials/_pages.scss */
@@ -1119,39 +1164,25 @@ html, body {
   -ms-transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
-  overflow: visible;
 }
-/* line 34, ../sass/partials/_pages.scss */
+/* line 33, ../sass/partials/_pages.scss */
 #about-me-page #about-me-page-container .about-header {
   position: absolute;
   top: 0;
   z-index: 1000;
-  width: 100%;
-  background: white;
 }
-/* line 41, ../sass/partials/_pages.scss */
-#about-me-page #about-me-page-container .about-header .about-title {
-  text-transform: uppercase;
-  letter-spacing: 45px;
-  padding: 20px 0;
-  color: black;
-  font-size: 2em;
-  font-weight: bold;
-  width: 100%;
-  text-align: center;
-}
-/* line 52, ../sass/partials/_pages.scss */
+/* line 39, ../sass/partials/_pages.scss */
 #about-me-page #about-me-page-container .about-header .button-holder {
   height: 35px;
   -webkit-align-items: flex-end;
   align-items: flex-end;
 }
-/* line 57, ../sass/partials/_pages.scss */
+/* line 44, ../sass/partials/_pages.scss */
 #about-me-page #about-me-page-container .about-header .button-holder * {
   cursor: pointer;
   text-align: center;
 }
-/* line 62, ../sass/partials/_pages.scss */
+/* line 49, ../sass/partials/_pages.scss */
 #about-me-page #about-me-page-container .about-header .button-holder .left-button {
   font-weight: bold;
   padding: 5px;
@@ -1159,14 +1190,14 @@ html, body {
   font-size: 1.2em;
   background: #6e798d;
 }
-/* line 70, ../sass/partials/_pages.scss */
+/* line 57, ../sass/partials/_pages.scss */
 #about-me-page #about-me-page-container .about-header .button-holder .right-button {
   font-weight: bold;
   padding: 5px;
   width: 50%;
   background: #bcc1c6;
 }
-/* line 83, ../sass/partials/_pages.scss */
+/* line 70, ../sass/partials/_pages.scss */
 #about-me-page #about-me-page-container .about-body {
   position: absolute;
   top: 125px;
@@ -1174,7 +1205,7 @@ html, body {
   perspective: 2000px;
   perspective-origin: top;
 }
-/* line 90, ../sass/partials/_pages.scss */
+/* line 77, ../sass/partials/_pages.scss */
 #about-me-page #about-me-page-container .about-body #about-section {
   -moz-transform: rotateX(0deg);
   -ms-transform: rotateX(0deg);
@@ -1195,17 +1226,18 @@ html, body {
   -webkit-justify-content: space-between;
   justify-content: space-between;
 }
-/* line 103, ../sass/partials/_pages.scss */
+/* line 91, ../sass/partials/_pages.scss */
 #about-me-page #about-me-page-container .about-body #about-section .about-text-section {
-  width: 60%;
+  overflow-y: auto;
+  width: 100%;
   margin-left: 20px;
-  padding: 30px 0 0 40px;
+  padding: 30px 30px 0 40px;
 }
-/* line 107, ../sass/partials/_pages.scss */
+/* line 96, ../sass/partials/_pages.scss */
 #about-me-page #about-me-page-container .about-body #about-section .about-text-section p {
   font-family: 'IBM Plex Serif', serif;
 }
-/* line 112, ../sass/partials/_pages.scss */
+/* line 101, ../sass/partials/_pages.scss */
 #about-me-page #about-me-page-container .about-body #about-section .about-image {
   width: 300px;
   height: 450px;
@@ -1214,8 +1246,14 @@ html, body {
   background-position: center bottom;
   background-size: cover;
 }
-/* line 122, ../sass/partials/_pages.scss */
+/* line 111, ../sass/partials/_pages.scss */
 #about-me-page #about-me-page-container .about-body #hobbies-section {
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
   -moz-transform: rotateY(-180deg);
   -ms-transform: rotateY(-180deg);
   -webkit-transform: rotateY(-180deg);
@@ -1226,9 +1264,449 @@ html, body {
   -moz-backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  width: 100%;
   background: white;
+  border-radius: 3px;
+  width: 100%;
   height: 450px;
   top: 0;
   position: absolute;
+}
+/* line 126, ../sass/partials/_pages.scss */
+#about-me-page #about-me-page-container .about-body #hobbies-section .first-row {
+  width: 100%;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+/* line 133, ../sass/partials/_pages.scss */
+#about-me-page #about-me-page-container .about-body #hobbies-section .second-row-item:first-child {
+  margin-right: 200px;
+}
+/* line 137, ../sass/partials/_pages.scss */
+#about-me-page #about-me-page-container .about-body #hobbies-section .second-row {
+  width: 100%;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+/* line 144, ../sass/partials/_pages.scss */
+#about-me-page #about-me-page-container .about-body #hobbies-section .hobbie-item {
+  padding: 15px;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  height: 205px;
+  width: 205px;
+  border-radius: 100%;
+  border: 2px solid black;
+}
+/* line 155, ../sass/partials/_pages.scss */
+#about-me-page #about-me-page-container .about-body #hobbies-section .hobbie-item .hobbie-image-holder {
+  margin-bottom: 10px;
+  padding: 20px;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+/* line 162, ../sass/partials/_pages.scss */
+#about-me-page #about-me-page-container .about-body #hobbies-section .hobbie-item .hobbie-image-holder img {
+  width: 85%;
+}
+/* line 167, ../sass/partials/_pages.scss */
+#about-me-page #about-me-page-container .about-body #hobbies-section .hobbie-item p {
+  text-align-last: center;
+  font-weight: 800;
+  font-size: 1.2em;
+}
+
+/* line 187, ../sass/partials/_pages.scss */
+.page-header {
+  width: 100%;
+  background: white;
+  margin-bottom: 20px;
+}
+
+/* line 193, ../sass/partials/_pages.scss */
+.page-title {
+  text-transform: uppercase;
+  letter-spacing: 45px;
+  padding: 20px 0;
+  color: black;
+  font-size: 2em;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+}
+
+/* line 206, ../sass/partials/_pages.scss */
+#hire-me-page * {
+  color: black;
+}
+/* line 211, ../sass/partials/_pages.scss */
+#hire-me-page .contact-body {
+  background: white;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  width: 100%;
+}
+/* line 222, ../sass/partials/_pages.scss */
+#hire-me-page .form-container {
+  overflow-y: auto;
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+/* line 233, ../sass/partials/_pages.scss */
+#hire-me-page h2 {
+  font-size: 1.7em !important;
+  text-transform: uppercase;
+  font-family: "raleway", cursive !important;
+}
+/* line 239, ../sass/partials/_pages.scss */
+#hire-me-page .form-item:not(last-child) {
+  margin-bottom: 20px;
+}
+/* line 243, ../sass/partials/_pages.scss */
+#hire-me-page .form-item {
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+}
+/* line 249, ../sass/partials/_pages.scss */
+#hire-me-page .form-item button {
+  padding: 10px;
+  width: 50%;
+  background: black;
+  border: 0;
+  border-radius: 2px;
+  color: white;
+  font-family: 'raleway', monospace;
+  font-weight: bold;
+  box-shadow: 0px 2px 1px 1px darkgray;
+  margin-top: 20px;
+}
+/* line 261, ../sass/partials/_pages.scss */
+#hire-me-page .form-item button:focus {
+  outline: 0 !important;
+  border: 0 !important;
+}
+/* line 267, ../sass/partials/_pages.scss */
+#hire-me-page .form-item button:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+/* line 271, ../sass/partials/_pages.scss */
+#hire-me-page .form-item button:active {
+  -moz-transform: translateY(2px);
+  -ms-transform: translateY(2px);
+  -webkit-transform: translateY(2px);
+  transform: translateY(2px);
+  box-shadow: none;
+}
+/* line 278, ../sass/partials/_pages.scss */
+#hire-me-page input, #hire-me-page textarea {
+  padding: 5px 10px;
+  border-radius: 2px;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border: 1px solid black;
+  width: 100%;
+}
+/* line 285, ../sass/partials/_pages.scss */
+#hire-me-page input:focus, #hire-me-page textarea:focus {
+  border: 1px solid black !important;
+  outline: 0 !important;
+  box-shadow: 0 0 3px 0 black;
+}
+/* line 292, ../sass/partials/_pages.scss */
+#hire-me-page textarea {
+  resize: none;
+}
+/* line 297, ../sass/partials/_pages.scss */
+#hire-me-page label {
+  font-size: 1.1em;
+  font-weight: bold;
+  min-width: 170px;
+  display: inline-block;
+}
+/* line 305, ../sass/partials/_pages.scss */
+#hire-me-page .right-img {
+  min-width: 280px;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  background-image: url("../images/light.jpg");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+}
+/* line 314, ../sass/partials/_pages.scss */
+#hire-me-page .right-img p {
+  color: #252524;
+  font-size: 1.8em;
+  font-weight: bold;
+}
+/* line 322, ../sass/partials/_pages.scss */
+#hire-me-page .footer-info {
+  width: 100%;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+}
+/* line 328, ../sass/partials/_pages.scss */
+#hire-me-page .footer-info i {
+  margin-right: 10px;
+  font-family: FontAwesome !important;
+  text-decoration: none;
+  font-style: normal !important;
+}
+/* line 335, ../sass/partials/_pages.scss */
+#hire-me-page .footer-info span {
+  font-size: 1.1em;
+  color: black;
+  text-transform: lowercase;
+  font-size: 0.9em;
+}
+
+/* line 345, ../sass/partials/_pages.scss */
+.beige {
+  color: #8b6d5e !important;
+}
+
+/* line 349, ../sass/partials/_pages.scss */
+#errormsg {
+  font-weight: bold;
+  position: absolute;
+  left: 20px;
+  top: 10px;
+  color: white;
+  font-family: "raleway", cursive !important;
+  letter-spacing: 2px;
+}
+
+/* line 361, ../sass/partials/_pages.scss */
+.load-wrapp {
+  left: 10px;
+  top: 0;
+  position: absolute;
+  display: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+/* line 373, ../sass/partials/_pages.scss */
+.ring-2 {
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  margin: 0 auto;
+  border: 4px solid white;
+  border-radius: 100%;
+}
+
+/* line 382, ../sass/partials/_pages.scss */
+.ball-holder {
+  position: absolute;
+  width: 12px;
+  height: 45px;
+  left: 17px;
+  top: 0px;
+}
+
+/* line 390, ../sass/partials/_pages.scss */
+.load-5 .ball-holder {
+  animation: loadingE 1.3s linear infinite;
+}
+
+/* line 392, ../sass/partials/_pages.scss */
+.ball {
+  position: absolute;
+  top: -11px;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 100%;
+  background: white;
+}
+
+@keyframes loadingE {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* line 411, ../sass/partials/_pages.scss */
+#education-page .education-header {
+  background: white;
+}
+/* line 415, ../sass/partials/_pages.scss */
+#education-page .knowledge-body {
+  padding: 20px;
+  width: 100%;
+  background: white;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+/* line 417, ../sass/partials/_pages.scss */
+#education-page .knowledge-body * {
+  font-weight: bold;
+  color: black;
+}
+/* line 428, ../sass/partials/_pages.scss */
+#education-page .knowledge-body .row {
+  width: 100%;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+/* line 436, ../sass/partials/_pages.scss */
+#education-page .knowledge-body .row .left-item .percentage-holder {
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  border-left: 2px solid gray;
+}
+/* line 444, ../sass/partials/_pages.scss */
+#education-page .knowledge-body .row .right-item .percentage-holder {
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  border-right: 2px solid gray;
+}
+/* line 451, ../sass/partials/_pages.scss */
+#education-page .knowledge-body .row span {
+  font-size: 1.2em;
+  width: 150px;
+}
+/* line 456, ../sass/partials/_pages.scss */
+#education-page .knowledge-body .row .left-item {
+  border-right: 2px solid black;
+  padding-right: 10px;
+  width: 50%;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+}
+/* line 464, ../sass/partials/_pages.scss */
+#education-page .knowledge-body .row .left-item span {
+  margin-right: 10px;
+}
+/* line 469, ../sass/partials/_pages.scss */
+#education-page .knowledge-body .row .right-item {
+  border-left: 2px solid black;
+  padding-left: 10px;
+  width: 50%;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+}
+/* line 477, ../sass/partials/_pages.scss */
+#education-page .knowledge-body .row .right-item span {
+  margin-left: 20px;
+}
+/* line 483, ../sass/partials/_pages.scss */
+#education-page .knowledge-body .row .percentage-holder {
+  background: transparent;
+  width: 100%;
+  height: 35px;
+}
+/* line 489, ../sass/partials/_pages.scss */
+#education-page .knowledge-body .row .percentage {
+  height: 100%;
+  border-radius: 2px;
+}
+/* line 497, ../sass/partials/_pages.scss */
+#education-page .knowledge-body .row:last-child {
+  margin-bottom: 0px;
+}
+
+/* line 510, ../sass/partials/_pages.scss */
+#experience-page .experience-body {
+  background: white;
+  padding: 10px;
+  height: 500px;
+  overflow: auto;
+  width: 100%;
+}
+/* line 518, ../sass/partials/_pages.scss */
+#experience-page .experience-body * {
+  color: black;
+  font-family: 'IBM Plex Serif', serif;
+}
+/* line 523, ../sass/partials/_pages.scss */
+#experience-page .experience-body .experience-text {
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+}
+/* line 529, ../sass/partials/_pages.scss */
+#experience-page .experience-body .kidzmondo {
+  width: 40%;
+  border-bottom: 1px solid black;
+}
+/* line 534, ../sass/partials/_pages.scss */
+#experience-page .experience-body .waiter {
+  width: 40%;
+  border-bottom: 1px solid black;
+}
+/* line 539, ../sass/partials/_pages.scss */
+#experience-page .experience-body .reference {
+  border: 1px solid black;
+  padding: 3px 10px;
+  width: auto;
+  display: inline-block;
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+/* line 548, ../sass/partials/_pages.scss */
+#experience-page .experience-body .exp-title {
+  font-size: 1.1em;
+  margin: 10px 0;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+/* line 555, ../sass/partials/_pages.scss */
+#experience-page .experience-body .extra {
+  margin-top: 20px;
+}
+/* line 558, ../sass/partials/_pages.scss */
+#experience-page .experience-body .extra .quote {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 30px;
+}
+/* line 564, ../sass/partials/_pages.scss */
+#experience-page .experience-body .extra .end {
+  width: 90%;
+  margin: 0 auto;
 }

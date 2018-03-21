@@ -1,6 +1,7 @@
-$(document).ready(function(){
+$(window).on('load',function(){
     // open menuSpace = 8/8/3 , letterSpace = 3/1/1
     //close menuSpace = 3/3/3
+
     var status = "open";
     var dots = document.getElementsByClassName("dots");
     var elHW ;
@@ -10,7 +11,6 @@ $(document).ready(function(){
     var hire = $("#hire-me-page");
     var about = $("#about-me-page");
     var leftcenter,topCenter,fontSize, letterSpacing,menuLetterSpacing;
-    var buttonSound = new Audio("sounds/light.mp3");
     var docHeight = $("body").height();
     var docWidth = $("body").width();
     var randomLeft, randomTop;
@@ -298,7 +298,28 @@ $(document).ready(function(){
         $("#education").click(function(){
             $(".active").removeClass("active");
             edu.addClass("active");
-            edu.animate({left:"10%"},700);
+            edu.animate({left:"10%"},700, function(){
+              $("#html").css("background","black").animate({width:"100%"},600,function(){
+                $("#css").css("background","black").animate({width:"100%"},600,function(){
+                  $("#js").css("background","black").animate({width:"100%"},600,function(){
+                    $("#jquery").css("background","black").animate({width:"100%"},600,function(){
+                      $("#php").css("background","black").animate({width:"90%"},600,function(){
+                        $("#mysql").css("background","black").animate({width:"90%"},600,function(){
+                          $("#git").css("background","black").animate({width:"70%"},600,function(){
+                            $("#sass").css("background","black").animate({width:"80%"},600,function(){
+                              $("#photoshop").css("background","black").animate({width:"60%"},600,function(){
+                                $("#bootstrap").css("background","black").animate({width:"70%"},600,function(){
+                                });
+                              });
+                            });
+                          });
+                        });
+                      });
+                    });
+                  });
+                });
+              });
+            });
         });
 
         $("#hire-me").click(function(){
@@ -360,6 +381,53 @@ $(document).ready(function(){
         fontSize: "1em",
       },200);
     });
+
+    //for the form in the contact me
+    var name, message, email;
+
+    $("#errormsg").fadeOut(0);;
+
+    $("#submit").click(function(){
+      name = $("#name").val();
+      message = $("#message").val();
+      email = $("#email").val();
+
+      if (name == "" || message == "" || email == ""){
+        $("#errormsg").html("* Please make sure you have all the fields filled.").fadeIn(300).delay(1000).fadeOut("slow");;
+      }
+      else{
+        $("#errormsg").html("");
+        submitForm();
+        $(".load-wrapp").css("display","block");
+      }
+
+    }); //end of click form
+
+    function submitForm(){
+
+        $.ajax({
+          type: 'POST',
+          dataType: 'html',
+          url: "php/contact.php",
+          data: {
+            'name' : name,
+            'email' : email,
+            'message': message
+           },
+          success:function(result){
+            $(".load-wrapp").css("display","none");
+            if (result == ""){
+              console.log("success");
+              $("#errormsg").css("color","green").html("Thank you for submitting your message!").fadeIn(300).delay(1000).fadeOut("slow");
+            }
+            else{
+              console.log("fail");
+              $('#errormsg').html('* Something went wrong. You e-mail could not been sent please make sure you put a valid e-mail address.').fadeIn(300).delay(1000).fadeOut("slow");;
+            }
+          }
+        });
+    } // end of submit form function
+    $(".loading-page").fadeOut(1000);
 });
 
 /*

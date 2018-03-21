@@ -1,9 +1,4 @@
-/*
-Z-INDEXES
-.menu-button: 1000
-#menu : 100!important;
-dots: 2;
-*/
+
 *{
     padding:0;
     margin:0;
@@ -19,6 +14,29 @@ html,body{
     width:100%;
     height:100%;
     overflow: hidden;
+}
+
+.mobile-message{
+  color:whitesmoke;
+  display:none;
+  font-size:1em!important;
+  padding:20px;
+}
+
+.loading-page{
+  position: absolute;
+  height:100%;
+  width: 100%;
+  background: $black;
+  z-index: 4000;
+  @extend %flex;
+  @include align-items(center);
+  @include justify-content(center);
+
+  .loading{
+    font-size:2em;
+    color:whitesmoke;
+  }
 }
 
 #main-page-container{
@@ -99,8 +117,11 @@ html,body{
     letter-spacing: 2px;
     cursor: pointer;
     border:1px solid white;
-    text-transform: capitalize;
+    text-transform: uppercase;
     z-index: 1000!important;
+    padding:0 5px;
+    line-height: 21px;
+    text-align: center;
 }
 
 .menu-button:focus, .menu-button:active{
@@ -185,8 +206,20 @@ html,body{
   opacity: 1;
 }
 
+@media all and (max-width: 850px){
+  .mobile-message{
+      display:block;
+  }
+
+  .loading{
+    display: none;
+  }
+}
+
 
 @media all and (max-width: $ipad){
+
+
   #welcome-container{
 
     p{
@@ -217,6 +250,9 @@ html,body{
 
 
 @media all and (max-width: $phone){
+
+
+
   #welcome-container{
 
     p{

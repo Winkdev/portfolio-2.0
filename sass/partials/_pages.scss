@@ -7,10 +7,10 @@
     text-align: left;
     z-index: 1!important;
     // border: 1px solid white;
-    // @extend %flex;
-    // @include align-items(center);
-    // @include justify-content(center);
-    // @include flex-direction(column);
+    @extend %flex;
+    @include align-items(center);
+    @include justify-content(center);
+    @include flex-direction(column);
 
 }
 
@@ -27,7 +27,6 @@
     height:600px;
     top:50%;
     @include transform(translateY(-50%));
-    overflow: visible;
 
 
   //HEADER OF THE PAGE
@@ -35,19 +34,7 @@
     position: absolute;
     top:0;
     z-index: 1000;
-    width:100%;
-    background: white;
 
-    .about-title{
-      text-transform: uppercase;
-      letter-spacing: 45px;
-      padding: 20px 0;
-      color:black;
-      font-size: 2em;
-      font-weight: bold;
-      width:100%;
-      text-align: center;
-    }
 
     .button-holder{
       height: 35px;
@@ -88,6 +75,7 @@
     perspective-origin: top;
     // THE ABOUT SECTION THAT'S ROTATING
     #about-section{
+
       @include transform(rotateX(0deg));
       @include transform-style(preserve-3d);
       @include backface-visibility(hidden);
@@ -101,9 +89,10 @@
       @include justify-content(space-between);
 
       .about-text-section{
-        width:60%;
+        overflow-y: auto;
+        width:100%;
         margin-left:20px;
-        padding:30px 0 0 40px;
+        padding:30px 30px 0 40px;
         p{
           font-family: 'IBM Plex Serif', serif;
         }
@@ -120,15 +109,71 @@
     } // end of #about-section
 
     #hobbies-section{
-      
+      @extend %flex;
+      @include flex-direction(column);
+      @include align-items(center);
+      @include justify-content(center);
       @include transform(rotateY(-180deg));
       @include transform-style(preserve-3d);
       @include backface-visibility(hidden);
+      background:white;
+      border-radius:3px;
       width:100%;
-      background: white;
       height:450px;
       top:0;
       position: absolute;
+
+      .first-row{
+        width:100%;
+        @extend %flex;
+        @include align-items(center);
+        @include justify-content(center);
+      }
+
+      .second-row-item:first-child{
+        margin-right: 200px;
+      }
+
+      .second-row{
+        width:100%;
+        @extend %flex;
+        @include align-items(center);
+        @include justify-content(center);
+      }
+
+      .hobbie-item{
+        padding:15px;
+        @extend %flex;
+        @include align-items(center);
+        @include justify-content(center);
+        @include flex-direction(column);
+        height:205px;
+        width:205px;
+        border-radius: 100%;
+        border:2px solid black;
+
+      .hobbie-image-holder{
+        margin-bottom:10px;
+        padding:20px;
+        @extend %flex;
+        @include align-items(center);
+        @include justify-content(center);
+        // font-size:100px;
+        img{
+          width:85%;
+        }
+      }
+
+      p{
+        text-align-last: center;
+        font-weight: 800;
+        font-size:1.2em;
+      }
+
+
+    } //end of hobbie-item
+
+
 
     } //end of #hobbies section
 
@@ -138,3 +183,393 @@
 }// end of #about me page container
 
 } //end of #about-me-page
+
+.page-header{
+  width:100%;
+  background: white;
+  margin-bottom:20px;
+}
+
+.page-title{
+  text-transform: uppercase;
+  letter-spacing: 45px;
+  padding: 20px 0;
+  color:black;
+  font-size: 2em;
+  font-weight: bold;
+  width:100%;
+  text-align: center;
+}
+
+#hire-me-page{
+
+  *{
+    color:black;
+
+  }
+
+  .contact-body{
+    *{
+      @extend %text-font;
+    }
+    background:white;
+    @extend %flex;
+    // @include align-items(center);
+    @include justify-content(space-between);
+    width:100%;
+  }
+
+  .form-container{
+    overflow-y: auto;
+    position: relative;
+    width:100%;
+    padding:20px;
+    @extend %flex;
+    @include align-items(center);
+    @include justify-content(flex-start);
+    @include flex-direction(column);
+  }
+
+  h2{
+    font-size:1.7em!important;
+    text-transform: uppercase;
+    font-family: 'raleway', cursive!important;
+  }
+
+  .form-item:not(last-child){
+    margin-bottom: 20px;
+  }
+
+  .form-item{
+    @extend %flex;
+    @include align-items(flex-start);
+    @include justify-content(flex-start);
+    width:100%;
+
+    button{
+      padding:10px;
+      width:50%;
+      background:black;
+      border:0;
+      border-radius:2px;
+      color:white;
+      font-family: 'raleway', monospace;
+      font-weight: bold;
+      box-shadow: 0px 2px 1px 1px darkgray;
+      margin-top:20px;
+
+      &:focus{
+        outline:0 !important;
+        border: 0!important;
+
+      }
+
+      &:hover{
+        color: rgba(255,255,255,0.8);
+      }
+
+      &:active{
+        @include transform(translateY(2px));
+        box-shadow: none;
+      }
+    }
+  }
+
+  input, textarea{
+    padding: 5px 10px;
+    border-radius: 2px;
+    @include transition(0.3s all);
+    border: 1px solid black;
+    width: 100%;
+
+    &:focus{
+      border: 1px solid black!important;
+      outline: 0!important;
+      box-shadow: 0 0 3px 0 black;
+    }
+  }
+
+  textarea{
+    resize: none;
+
+  }
+
+  label{
+    // border:1px solid blue;
+    font-size:1.1em;
+    font-weight: bold;
+    min-width:170px;
+    display: inline-block;
+  }
+
+  .right-img{
+    min-width:280px;
+    @extend %flex;
+    @include align-items(center);
+    @include justify-content(center);
+    background-image: url('../images/light.jpg');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    p{
+      color: $contact-black;
+      font-size: 1.8em;
+      font-weight: bold;
+    }
+
+  }
+
+  .footer-info{
+    width:100%;
+    @extend %flex;
+    @include align-items(center);
+    @include justify-content(space-around);
+
+    i{
+      margin-right:10px;
+      font-family: FontAwesome!important;
+      text-decoration: none;
+      font-style: normal!important;
+    }
+
+    span{
+      font-size:1.1em;
+      color:black;
+      text-transform: lowercase;
+      font-size:0.9em;
+    }
+  }
+
+} // end of #hire-me-page
+
+.beige{
+  color: $beige!important;
+}
+
+#errormsg{
+  font-weight: bold;
+  position: absolute;
+  left:20px;
+  top:10px;
+  color: white;
+  font-family: 'raleway', cursive!important;
+  letter-spacing: 2px;
+}
+
+
+// laoding animation
+.load-wrapp {
+    left:10px;
+    // @include transform(translateX(-50%));
+    top:0;
+    position:absolute;
+    display:none;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.ring-2 {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    margin: 0 auto;
+    border: 4px solid white;
+    border-radius: 100%;
+}
+
+.ball-holder {
+    position: absolute;
+    width: 12px;
+    height: 45px;
+    left: 17px;
+    top: 0px;
+}
+
+.load-5 .ball-holder {animation: loadingE 1.3s linear infinite;}
+
+.ball {
+    position: absolute;
+    top: -11px;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    border-radius: 100%;
+    background: white;
+}
+
+
+@keyframes loadingE {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+
+
+#education-page{
+
+  .education-header{
+    background:white;
+  }
+
+  .knowledge-body{
+    padding:20px;
+    *{
+      font-weight: bold;
+      color:black;
+    }
+    width:100%;
+    background: white;
+    @extend %flex;
+    @include align-items(center);
+    @include justify-content(center);
+    @include flex-direction(column);
+
+    .row{
+
+      width:100%;
+      @extend %flex;
+      @include align-items(center);
+      @include justify-content(space-between);
+      margin-bottom:40px;
+
+      .left-item .percentage-holder{
+        @extend %flex;
+        @include align-items(center);
+        @include justify-content(flex-end);
+        border-left:2px solid gray;
+
+      }
+
+      .right-item .percentage-holder{
+        @extend %flex;
+        @include align-items(center);
+        @include justify-content(flex-start);
+        border-right:2px solid gray;
+      }
+
+      span{
+        font-size:1.2em;
+        width: 150px;
+      }
+
+      .left-item{
+        border-right: 2px solid black;
+        padding-right:10px;
+        width:50%;
+        @extend %flex;
+        @include align-items(center);
+        @include justify-content(flex-end);
+
+        span{
+          margin-right:10px;
+        }
+      }
+
+      .right-item{
+        border-left: 2px solid black;
+        padding-left:10px;
+        width:50%;
+        @extend %flex;
+        @include align-items(center);
+        @include justify-content(flex-start);
+
+        span{
+          margin-left:20px;
+        }
+      }
+
+
+      .percentage-holder{
+        background: transparent;
+        width:100%;
+        height: 35px;
+      }
+
+      .percentage{
+        height:100%;
+        border-radius:2px;
+      }
+
+
+    } //end of row
+
+    .row:last-child{
+      margin-bottom:0px;
+    }
+  } // end of .knowledge-body
+
+
+
+
+} //end of education page
+
+#experience-page{
+
+
+  .experience-body{
+
+    background:white;
+    padding:10px;
+    height:500px;
+    overflow: auto;
+    width:100%;
+
+    *{
+      color:black;
+      font-family: 'IBM Plex Serif', serif;
+    }
+
+    .experience-text{
+      @extend %flex;
+      // @include align-items(center);
+      @include justify-content(space-around);
+    }
+
+    .kidzmondo{
+      width:40%;
+      border-bottom: 1px solid black;
+    }
+
+    .waiter{
+      width:40%;
+      border-bottom: 1px solid black;
+    }
+
+    .reference{
+      border:1px solid black;
+      padding: 3px 10px;
+      width:auto;
+      display:inline-block;
+      margin-bottom:10px;
+      margin-top:5px;
+    }
+
+    .exp-title{
+      font-size:1.1em;
+      margin: 10px 0;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .extra{
+      margin-top: 20px;
+
+      .quote{
+        width:100%;
+        text-align: center;
+        margin-bottom:30px;
+      }
+
+      .end{
+        width:90%;
+        margin:0 auto;
+      }
+    }
+
+
+
+
+  }
+
+}
