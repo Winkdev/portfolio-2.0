@@ -94,7 +94,7 @@
         margin-left:20px;
         padding:30px 30px 0 40px;
         p{
-          font-family: 'IBM Plex Serif', serif;
+          font-family: 'Vollkorn', serif;
         }
       }
 
@@ -147,26 +147,42 @@
         @include align-items(center);
         @include justify-content(center);
         @include flex-direction(column);
-        height:205px;
-        width:205px;
-        border-radius: 100%;
-        border:2px solid black;
 
       .hobbie-image-holder{
+        border-radius: 100%;
+        border:2px solid black;
         margin-bottom:10px;
-        padding:20px;
+        width: 130px;
+        height: 130px;
         @extend %flex;
         @include align-items(center);
         @include justify-content(center);
         // font-size:100px;
-        img{
-          width:85%;
-        }
+
+      }
+
+      .fa-gamepad{
+        @include transform(translateY(-3px));
+      }
+
+      #guitar{
+        background-image: url('../images/guitar.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: top center;
+      }
+
+      #singing{
+        background-image: url('../images/microphone.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: top center;
       }
 
       p{
         text-align-last: center;
-        font-weight: 800;
+        font-family: 'Vollkorn', serif;
+        font-weight: bold;
         font-size:1.2em;
       }
 
@@ -224,6 +240,7 @@
     position: relative;
     width:100%;
     padding:20px;
+    padding-right: 50px!important;
     @extend %flex;
     @include align-items(center);
     @include justify-content(flex-start);
@@ -303,7 +320,7 @@
   }
 
   .right-img{
-    min-width:280px;
+    min-width:210px;
     @extend %flex;
     @include align-items(center);
     @include justify-content(center);
@@ -312,8 +329,9 @@
     background-position: center top;
     background-size: cover;
     p{
-      color: $contact-black;
-      font-size: 1.8em;
+      padding:10px;
+      color: white;
+      font-size: 1.7em;
       font-weight: bold;
     }
 
@@ -427,6 +445,8 @@
 
     .row{
 
+
+
       width:100%;
       @extend %flex;
       @include align-items(center);
@@ -437,15 +457,16 @@
         @extend %flex;
         @include align-items(center);
         @include justify-content(flex-end);
-        border-left:2px solid gray;
-
+        border-left:2px solid black;
+        border-right:2px solid black;
       }
 
       .right-item .percentage-holder{
         @extend %flex;
         @include align-items(center);
         @include justify-content(flex-start);
-        border-right:2px solid gray;
+        border-left:2px solid black;
+        border-right:2px solid black;
       }
 
       span{
@@ -454,8 +475,7 @@
       }
 
       .left-item{
-        border-right: 2px solid black;
-        padding-right:10px;
+        margin-right:2px;
         width:50%;
         @extend %flex;
         @include align-items(center);
@@ -467,8 +487,7 @@
       }
 
       .right-item{
-        border-left: 2px solid black;
-        padding-left:10px;
+        margin-left:2px;
         width:50%;
         @extend %flex;
         @include align-items(center);
@@ -487,8 +506,8 @@
       }
 
       .percentage{
+        float:right;
         height:100%;
-        border-radius:2px;
       }
 
 
@@ -510,30 +529,29 @@
   .experience-body{
 
     background:white;
-    padding:10px;
-    height:500px;
+    padding:20px;
+    // height:500px;
     overflow: auto;
     width:100%;
 
     *{
       color:black;
-      font-family: 'IBM Plex Serif', serif;
+      font-family: 'Vollkorn', serif;
     }
 
     .experience-text{
       @extend %flex;
-      // @include align-items(center);
       @include justify-content(space-around);
+      @include flex-direction(column);
+      padding-left:20px;
     }
 
     .kidzmondo{
-      width:40%;
-      border-bottom: 1px solid black;
+      width:80%;
     }
 
-    .waiter{
-      width:40%;
-      border-bottom: 1px solid black;
+    .freelancing{
+      width:80%;
     }
 
     .reference{
@@ -553,12 +571,14 @@
     }
 
     .extra{
+      border-top:1px solid black;
       margin-top: 20px;
+      padding-top:10px;
 
       .quote{
         width:100%;
         text-align: center;
-        margin-bottom:30px;
+        margin-bottom:15px;
       }
 
       .end{

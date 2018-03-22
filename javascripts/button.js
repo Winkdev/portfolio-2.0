@@ -14,6 +14,7 @@ $(window).on('load',function(){
     var docHeight = $("body").height();
     var docWidth = $("body").width();
     var randomLeft, randomTop;
+    var loading = 0;
 
     function starsGenerator(elem, numberOfStars){
       var star, randomHW, randomStar;
@@ -40,6 +41,8 @@ $(window).on('load',function(){
         });
       }
     }
+    loading = loading + 10;
+    $(".loading-perc").html(loading + "%");
 
     starsGenerator("#main-page-container",50);
 
@@ -56,6 +59,8 @@ $(window).on('load',function(){
           $(this).css('display','none');
         });
     }
+    loading = loading + 10;
+    $(".loading-perc").html(loading + "%");
 
     //opens all the buttons and put them in their positions depending on the document size (responsive)
     function openMenuButton(){
@@ -103,6 +108,9 @@ $(window).on('load',function(){
         $("#animated-button").unbind("mouseenter",playButtonSound);
 
     }
+
+    loading = loading + 10;
+    $(".loading-perc").html(loading + "%");
 
     function closeMenuButton(){ //put the menu button top left and closes the buttons
         var contHW,menuSize;
@@ -154,6 +162,11 @@ $(window).on('load',function(){
             } // end of else
         } // end of i
     }
+
+    loading = loading + 10;
+    $(".loading-perc").html(loading + "%");
+
+
         //place the dots in a square position
 
     function openDots(){ //the dots that come out of the button on hover
@@ -186,6 +199,9 @@ $(window).on('load',function(){
 
         }); // end of mouse leave
     }
+
+    loading = loading + 10;
+    $(".loading-perc").html(loading + "%");
 
     function renew(elem){ //clones an element and returns it
         elem.before(elem.clone(true));
@@ -255,6 +271,8 @@ $(window).on('load',function(){
 
     } // end of RESPONSIVE fn
 
+    loading = loading + 10;
+    $(".loading-perc").html(loading + "%");
     //activating the main functions
     $("#animated-button").click(function(){
         hideWelcomeContainer();
@@ -343,6 +361,9 @@ $(window).on('load',function(){
 
     }); // end of #animated-button.click
 
+    loading = loading + 10;
+    $(".loading-perc").html(loading + "%");
+
     //animations in the About me page
     $(".left-button").click(function(){
 
@@ -372,7 +393,8 @@ $(window).on('load',function(){
       $("#about-section").addClass('rotate0to180');
       $("#hobbies-section").addClass('rotatem180to0');
       //}
-
+      loading = loading + 10;
+      $(".loading-perc").html(loading + "%");
       $(this).animate({
         fontSize: "1.2em",
       },200);
@@ -403,6 +425,13 @@ $(window).on('load',function(){
 
     }); //end of click form
 
+
+    loading = loading + 10;
+    $(".loading-perc").html(loading + "%");
+
+
+    loading = loading + 10;
+    $(".loading-perc").html(loading + "%");
     function submitForm(){
 
         $.ajax({
@@ -419,6 +448,9 @@ $(window).on('load',function(){
             if (result == ""){
               console.log("success");
               $("#errormsg").css("color","green").html("Thank you for submitting your message!").fadeIn(300).delay(1000).fadeOut("slow");
+              name = $("#name").val("");
+              message = $("#message").val("");
+              email = $("#email").val("");
             }
             else{
               console.log("fail");
@@ -427,7 +459,11 @@ $(window).on('load',function(){
           }
         });
     } // end of submit form function
-    $(".loading-page").fadeOut(1000);
+    var bodyWidth = $("body").width();
+
+    if (bodyWidth > 850){
+      $(".loading-page").fadeOut(300);
+    }
 });
 
 /*

@@ -862,10 +862,11 @@ html, body {
 /* line 36, ../sass/partials/_index.scss */
 .loading-page .loading {
   font-size: 2em;
+  letter-spacing: 8px;
   color: whitesmoke;
 }
 
-/* line 42, ../sass/partials/_index.scss */
+/* line 43, ../sass/partials/_index.scss */
 #main-page-container {
   background-color: #171613;
   width: 100%;
@@ -878,7 +879,7 @@ html, body {
   justify-content: center;
 }
 
-/* line 52, ../sass/partials/_index.scss */
+/* line 53, ../sass/partials/_index.scss */
 #welcome-container {
   background: transparent;
   -webkit-flex-direction: column;
@@ -892,18 +893,18 @@ html, body {
   text-transform: capitalize;
   z-index: 100;
 }
-/* line 62, ../sass/partials/_index.scss */
+/* line 63, ../sass/partials/_index.scss */
 #welcome-container p {
   font-size: 1.2em;
   color: whitesmoke;
 }
-/* line 67, ../sass/partials/_index.scss */
+/* line 68, ../sass/partials/_index.scss */
 #welcome-container p#welcome {
   font-size: 2.8em;
   letter-spacing: 5px;
 }
 
-/* line 73, ../sass/partials/_index.scss */
+/* line 74, ../sass/partials/_index.scss */
 #animated-button {
   width: 70px;
   height: 70px;
@@ -917,24 +918,24 @@ html, body {
   letter-spacing: 3px;
   z-index: 1000;
 }
-/* line 85, ../sass/partials/_index.scss */
+/* line 86, ../sass/partials/_index.scss */
 #animated-button:hover {
   cursor: pointer;
   background: black;
 }
 
-/* line 91, ../sass/partials/_index.scss */
+/* line 92, ../sass/partials/_index.scss */
 #welcome, #animated-button {
   color: whitesmoke;
 }
 
-/* line 95, ../sass/partials/_index.scss */
+/* line 96, ../sass/partials/_index.scss */
 #animated-button:focus, #animated-button:active {
   outline: 0;
 }
 
 /*THE MAIN BUTTONS*/
-/* line 101, ../sass/partials/_index.scss */
+/* line 102, ../sass/partials/_index.scss */
 #menu-button-container {
   display: none;
   overflow: visible;
@@ -942,8 +943,9 @@ html, body {
   z-index: 10000 !important;
 }
 
-/* line 108, ../sass/partials/_index.scss */
+/* line 109, ../sass/partials/_index.scss */
 .menu-button {
+  font-size: 0.7em !important;
   overflow: visible;
   width: 0;
   height: 0;
@@ -957,8 +959,6 @@ html, body {
   border: 1px solid white;
   text-transform: uppercase;
   z-index: 1000 !important;
-  padding: 0 5px;
-  line-height: 21px;
   text-align: center;
 }
 
@@ -1072,65 +1072,19 @@ html, body {
 }
 
 @media all and (max-width: 850px) {
-  /* line 210, ../sass/partials/_index.scss */
+  /* line 211, ../sass/partials/_index.scss */
   .mobile-message {
     display: block;
   }
 
-  /* line 214, ../sass/partials/_index.scss */
+  /* line 215, ../sass/partials/_index.scss */
   .loading {
     display: none;
   }
-}
-@media all and (max-width: 650px) {
-  /* line 225, ../sass/partials/_index.scss */
-  #welcome-container p {
-    text-align: center;
-    font-size: 1em !important;
-  }
-  /* line 230, ../sass/partials/_index.scss */
-  #welcome-container #welcome {
-    font-size: 1.8em !important;
-  }
-  /* line 234, ../sass/partials/_index.scss */
-  #welcome-container #animated-button {
-    width: 60px;
-    height: 60px;
-    font-size: 0.6em;
-  }
 
-  /* line 241, ../sass/partials/_index.scss */
-  .dots {
-    display: none;
-  }
-
-  /* line 245, ../sass/partials/_index.scss */
-  .page {
-    width: 100%;
-    height: 100%;
-  }
-}
-@media all and (max-width: 300px) {
-  /* line 258, ../sass/partials/_index.scss */
-  #welcome-container p {
-    text-align: center;
-    font-size: 0.8em !important;
-  }
-  /* line 263, ../sass/partials/_index.scss */
-  #welcome-container #welcome {
-    font-size: 1.5em !important;
-    text-align-last: center;
-  }
-
-  /* line 269, ../sass/partials/_index.scss */
-  .dots {
-    display: none;
-  }
-
-  /* line 273, ../sass/partials/_index.scss */
-  .page {
-    width: 100%;
-    height: 100%;
+  /* line 219, ../sass/partials/_index.scss */
+  #main-page-container {
+    display: none !important;
   }
 }
 /* line 1, ../sass/partials/_pages.scss */
@@ -1235,7 +1189,7 @@ html, body {
 }
 /* line 96, ../sass/partials/_pages.scss */
 #about-me-page #about-me-page-container .about-body #about-section .about-text-section p {
-  font-family: 'IBM Plex Serif', serif;
+  font-family: 'Vollkorn', serif;
 }
 /* line 101, ../sass/partials/_pages.scss */
 #about-me-page #about-me-page-container .about-body #about-section .about-image {
@@ -1300,39 +1254,56 @@ html, body {
   justify-content: center;
   -webkit-flex-direction: column;
   flex-direction: column;
-  height: 205px;
-  width: 205px;
+}
+/* line 151, ../sass/partials/_pages.scss */
+#about-me-page #about-me-page-container .about-body #hobbies-section .hobbie-item .hobbie-image-holder {
   border-radius: 100%;
   border: 2px solid black;
-}
-/* line 155, ../sass/partials/_pages.scss */
-#about-me-page #about-me-page-container .about-body #hobbies-section .hobbie-item .hobbie-image-holder {
   margin-bottom: 10px;
-  padding: 20px;
+  width: 130px;
+  height: 130px;
   -webkit-align-items: center;
   align-items: center;
   -webkit-justify-content: center;
   justify-content: center;
 }
-/* line 162, ../sass/partials/_pages.scss */
-#about-me-page #about-me-page-container .about-body #hobbies-section .hobbie-item .hobbie-image-holder img {
-  width: 85%;
+/* line 164, ../sass/partials/_pages.scss */
+#about-me-page #about-me-page-container .about-body #hobbies-section .hobbie-item .fa-gamepad {
+  -moz-transform: translateY(-3px);
+  -ms-transform: translateY(-3px);
+  -webkit-transform: translateY(-3px);
+  transform: translateY(-3px);
 }
-/* line 167, ../sass/partials/_pages.scss */
+/* line 168, ../sass/partials/_pages.scss */
+#about-me-page #about-me-page-container .about-body #hobbies-section .hobbie-item #guitar {
+  background-image: url("../images/guitar.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top center;
+}
+/* line 175, ../sass/partials/_pages.scss */
+#about-me-page #about-me-page-container .about-body #hobbies-section .hobbie-item #singing {
+  background-image: url("../images/microphone.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top center;
+}
+/* line 182, ../sass/partials/_pages.scss */
 #about-me-page #about-me-page-container .about-body #hobbies-section .hobbie-item p {
   text-align-last: center;
-  font-weight: 800;
+  font-family: 'Vollkorn', serif;
+  font-weight: bold;
   font-size: 1.2em;
 }
 
-/* line 187, ../sass/partials/_pages.scss */
+/* line 203, ../sass/partials/_pages.scss */
 .page-header {
   width: 100%;
   background: white;
   margin-bottom: 20px;
 }
 
-/* line 193, ../sass/partials/_pages.scss */
+/* line 209, ../sass/partials/_pages.scss */
 .page-title {
   text-transform: uppercase;
   letter-spacing: 45px;
@@ -1344,23 +1315,24 @@ html, body {
   text-align: center;
 }
 
-/* line 206, ../sass/partials/_pages.scss */
+/* line 222, ../sass/partials/_pages.scss */
 #hire-me-page * {
   color: black;
 }
-/* line 211, ../sass/partials/_pages.scss */
+/* line 227, ../sass/partials/_pages.scss */
 #hire-me-page .contact-body {
   background: white;
   -webkit-justify-content: space-between;
   justify-content: space-between;
   width: 100%;
 }
-/* line 222, ../sass/partials/_pages.scss */
+/* line 238, ../sass/partials/_pages.scss */
 #hire-me-page .form-container {
   overflow-y: auto;
   position: relative;
   width: 100%;
   padding: 20px;
+  padding-right: 50px !important;
   -webkit-align-items: center;
   align-items: center;
   -webkit-justify-content: flex-start;
@@ -1368,17 +1340,17 @@ html, body {
   -webkit-flex-direction: column;
   flex-direction: column;
 }
-/* line 233, ../sass/partials/_pages.scss */
+/* line 250, ../sass/partials/_pages.scss */
 #hire-me-page h2 {
   font-size: 1.7em !important;
   text-transform: uppercase;
   font-family: "raleway", cursive !important;
 }
-/* line 239, ../sass/partials/_pages.scss */
+/* line 256, ../sass/partials/_pages.scss */
 #hire-me-page .form-item:not(last-child) {
   margin-bottom: 20px;
 }
-/* line 243, ../sass/partials/_pages.scss */
+/* line 260, ../sass/partials/_pages.scss */
 #hire-me-page .form-item {
   -webkit-align-items: flex-start;
   align-items: flex-start;
@@ -1386,7 +1358,7 @@ html, body {
   justify-content: flex-start;
   width: 100%;
 }
-/* line 249, ../sass/partials/_pages.scss */
+/* line 266, ../sass/partials/_pages.scss */
 #hire-me-page .form-item button {
   padding: 10px;
   width: 50%;
@@ -1399,16 +1371,16 @@ html, body {
   box-shadow: 0px 2px 1px 1px darkgray;
   margin-top: 20px;
 }
-/* line 261, ../sass/partials/_pages.scss */
+/* line 278, ../sass/partials/_pages.scss */
 #hire-me-page .form-item button:focus {
   outline: 0 !important;
   border: 0 !important;
 }
-/* line 267, ../sass/partials/_pages.scss */
+/* line 284, ../sass/partials/_pages.scss */
 #hire-me-page .form-item button:hover {
   color: rgba(255, 255, 255, 0.8);
 }
-/* line 271, ../sass/partials/_pages.scss */
+/* line 288, ../sass/partials/_pages.scss */
 #hire-me-page .form-item button:active {
   -moz-transform: translateY(2px);
   -ms-transform: translateY(2px);
@@ -1416,7 +1388,7 @@ html, body {
   transform: translateY(2px);
   box-shadow: none;
 }
-/* line 278, ../sass/partials/_pages.scss */
+/* line 295, ../sass/partials/_pages.scss */
 #hire-me-page input, #hire-me-page textarea {
   padding: 5px 10px;
   border-radius: 2px;
@@ -1427,26 +1399,26 @@ html, body {
   border: 1px solid black;
   width: 100%;
 }
-/* line 285, ../sass/partials/_pages.scss */
+/* line 302, ../sass/partials/_pages.scss */
 #hire-me-page input:focus, #hire-me-page textarea:focus {
   border: 1px solid black !important;
   outline: 0 !important;
   box-shadow: 0 0 3px 0 black;
 }
-/* line 292, ../sass/partials/_pages.scss */
+/* line 309, ../sass/partials/_pages.scss */
 #hire-me-page textarea {
   resize: none;
 }
-/* line 297, ../sass/partials/_pages.scss */
+/* line 314, ../sass/partials/_pages.scss */
 #hire-me-page label {
   font-size: 1.1em;
   font-weight: bold;
   min-width: 170px;
   display: inline-block;
 }
-/* line 305, ../sass/partials/_pages.scss */
+/* line 322, ../sass/partials/_pages.scss */
 #hire-me-page .right-img {
-  min-width: 280px;
+  min-width: 210px;
   -webkit-align-items: center;
   align-items: center;
   -webkit-justify-content: center;
@@ -1456,13 +1428,14 @@ html, body {
   background-position: center top;
   background-size: cover;
 }
-/* line 314, ../sass/partials/_pages.scss */
+/* line 331, ../sass/partials/_pages.scss */
 #hire-me-page .right-img p {
-  color: #252524;
-  font-size: 1.8em;
+  padding: 10px;
+  color: white;
+  font-size: 1.7em;
   font-weight: bold;
 }
-/* line 322, ../sass/partials/_pages.scss */
+/* line 340, ../sass/partials/_pages.scss */
 #hire-me-page .footer-info {
   width: 100%;
   -webkit-align-items: center;
@@ -1470,14 +1443,14 @@ html, body {
   -webkit-justify-content: space-around;
   justify-content: space-around;
 }
-/* line 328, ../sass/partials/_pages.scss */
+/* line 346, ../sass/partials/_pages.scss */
 #hire-me-page .footer-info i {
   margin-right: 10px;
   font-family: FontAwesome !important;
   text-decoration: none;
   font-style: normal !important;
 }
-/* line 335, ../sass/partials/_pages.scss */
+/* line 353, ../sass/partials/_pages.scss */
 #hire-me-page .footer-info span {
   font-size: 1.1em;
   color: black;
@@ -1485,12 +1458,12 @@ html, body {
   font-size: 0.9em;
 }
 
-/* line 345, ../sass/partials/_pages.scss */
+/* line 363, ../sass/partials/_pages.scss */
 .beige {
   color: #8b6d5e !important;
 }
 
-/* line 349, ../sass/partials/_pages.scss */
+/* line 367, ../sass/partials/_pages.scss */
 #errormsg {
   font-weight: bold;
   position: absolute;
@@ -1501,7 +1474,7 @@ html, body {
   letter-spacing: 2px;
 }
 
-/* line 361, ../sass/partials/_pages.scss */
+/* line 379, ../sass/partials/_pages.scss */
 .load-wrapp {
   left: 10px;
   top: 0;
@@ -1513,7 +1486,7 @@ html, body {
   text-align: center;
 }
 
-/* line 373, ../sass/partials/_pages.scss */
+/* line 391, ../sass/partials/_pages.scss */
 .ring-2 {
   position: absolute;
   width: 45px;
@@ -1523,7 +1496,7 @@ html, body {
   border-radius: 100%;
 }
 
-/* line 382, ../sass/partials/_pages.scss */
+/* line 400, ../sass/partials/_pages.scss */
 .ball-holder {
   position: absolute;
   width: 12px;
@@ -1532,12 +1505,12 @@ html, body {
   top: 0px;
 }
 
-/* line 390, ../sass/partials/_pages.scss */
+/* line 408, ../sass/partials/_pages.scss */
 .load-5 .ball-holder {
   animation: loadingE 1.3s linear infinite;
 }
 
-/* line 392, ../sass/partials/_pages.scss */
+/* line 410, ../sass/partials/_pages.scss */
 .ball {
   position: absolute;
   top: -11px;
@@ -1556,11 +1529,11 @@ html, body {
     transform: rotate(360deg);
   }
 }
-/* line 411, ../sass/partials/_pages.scss */
+/* line 429, ../sass/partials/_pages.scss */
 #education-page .education-header {
   background: white;
 }
-/* line 415, ../sass/partials/_pages.scss */
+/* line 433, ../sass/partials/_pages.scss */
 #education-page .knowledge-body {
   padding: 20px;
   width: 100%;
@@ -1572,12 +1545,12 @@ html, body {
   -webkit-flex-direction: column;
   flex-direction: column;
 }
-/* line 417, ../sass/partials/_pages.scss */
+/* line 435, ../sass/partials/_pages.scss */
 #education-page .knowledge-body * {
   font-weight: bold;
   color: black;
 }
-/* line 428, ../sass/partials/_pages.scss */
+/* line 446, ../sass/partials/_pages.scss */
 #education-page .knowledge-body .row {
   width: 100%;
   -webkit-align-items: center;
@@ -1586,100 +1559,100 @@ html, body {
   justify-content: space-between;
   margin-bottom: 40px;
 }
-/* line 436, ../sass/partials/_pages.scss */
+/* line 456, ../sass/partials/_pages.scss */
 #education-page .knowledge-body .row .left-item .percentage-holder {
   -webkit-align-items: center;
   align-items: center;
   -webkit-justify-content: flex-end;
   justify-content: flex-end;
-  border-left: 2px solid gray;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
 }
-/* line 444, ../sass/partials/_pages.scss */
+/* line 464, ../sass/partials/_pages.scss */
 #education-page .knowledge-body .row .right-item .percentage-holder {
   -webkit-align-items: center;
   align-items: center;
   -webkit-justify-content: flex-start;
   justify-content: flex-start;
-  border-right: 2px solid gray;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
 }
-/* line 451, ../sass/partials/_pages.scss */
+/* line 472, ../sass/partials/_pages.scss */
 #education-page .knowledge-body .row span {
   font-size: 1.2em;
   width: 150px;
 }
-/* line 456, ../sass/partials/_pages.scss */
+/* line 477, ../sass/partials/_pages.scss */
 #education-page .knowledge-body .row .left-item {
-  border-right: 2px solid black;
-  padding-right: 10px;
+  margin-right: 2px;
   width: 50%;
   -webkit-align-items: center;
   align-items: center;
   -webkit-justify-content: flex-end;
   justify-content: flex-end;
 }
-/* line 464, ../sass/partials/_pages.scss */
+/* line 484, ../sass/partials/_pages.scss */
 #education-page .knowledge-body .row .left-item span {
   margin-right: 10px;
 }
-/* line 469, ../sass/partials/_pages.scss */
+/* line 489, ../sass/partials/_pages.scss */
 #education-page .knowledge-body .row .right-item {
-  border-left: 2px solid black;
-  padding-left: 10px;
+  margin-left: 2px;
   width: 50%;
   -webkit-align-items: center;
   align-items: center;
   -webkit-justify-content: flex-start;
   justify-content: flex-start;
 }
-/* line 477, ../sass/partials/_pages.scss */
+/* line 496, ../sass/partials/_pages.scss */
 #education-page .knowledge-body .row .right-item span {
   margin-left: 20px;
 }
-/* line 483, ../sass/partials/_pages.scss */
+/* line 502, ../sass/partials/_pages.scss */
 #education-page .knowledge-body .row .percentage-holder {
   background: transparent;
   width: 100%;
   height: 35px;
 }
-/* line 489, ../sass/partials/_pages.scss */
+/* line 508, ../sass/partials/_pages.scss */
 #education-page .knowledge-body .row .percentage {
+  float: right;
   height: 100%;
-  border-radius: 2px;
 }
-/* line 497, ../sass/partials/_pages.scss */
+/* line 516, ../sass/partials/_pages.scss */
 #education-page .knowledge-body .row:last-child {
   margin-bottom: 0px;
 }
 
-/* line 510, ../sass/partials/_pages.scss */
+/* line 529, ../sass/partials/_pages.scss */
 #experience-page .experience-body {
   background: white;
-  padding: 10px;
-  height: 500px;
+  padding: 20px;
   overflow: auto;
   width: 100%;
 }
-/* line 518, ../sass/partials/_pages.scss */
+/* line 537, ../sass/partials/_pages.scss */
 #experience-page .experience-body * {
   color: black;
-  font-family: 'IBM Plex Serif', serif;
+  font-family: 'Vollkorn', serif;
 }
-/* line 523, ../sass/partials/_pages.scss */
+/* line 542, ../sass/partials/_pages.scss */
 #experience-page .experience-body .experience-text {
   -webkit-justify-content: space-around;
   justify-content: space-around;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  padding-left: 20px;
 }
-/* line 529, ../sass/partials/_pages.scss */
+/* line 549, ../sass/partials/_pages.scss */
 #experience-page .experience-body .kidzmondo {
-  width: 40%;
-  border-bottom: 1px solid black;
+  width: 80%;
 }
-/* line 534, ../sass/partials/_pages.scss */
-#experience-page .experience-body .waiter {
-  width: 40%;
-  border-bottom: 1px solid black;
+/* line 553, ../sass/partials/_pages.scss */
+#experience-page .experience-body .freelancing {
+  width: 80%;
 }
-/* line 539, ../sass/partials/_pages.scss */
+/* line 557, ../sass/partials/_pages.scss */
 #experience-page .experience-body .reference {
   border: 1px solid black;
   padding: 3px 10px;
@@ -1688,24 +1661,26 @@ html, body {
   margin-bottom: 10px;
   margin-top: 5px;
 }
-/* line 548, ../sass/partials/_pages.scss */
+/* line 566, ../sass/partials/_pages.scss */
 #experience-page .experience-body .exp-title {
   font-size: 1.1em;
   margin: 10px 0;
   margin-bottom: 5px;
   font-weight: bold;
 }
-/* line 555, ../sass/partials/_pages.scss */
+/* line 573, ../sass/partials/_pages.scss */
 #experience-page .experience-body .extra {
+  border-top: 1px solid black;
   margin-top: 20px;
+  padding-top: 10px;
 }
-/* line 558, ../sass/partials/_pages.scss */
+/* line 578, ../sass/partials/_pages.scss */
 #experience-page .experience-body .extra .quote {
   width: 100%;
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 }
-/* line 564, ../sass/partials/_pages.scss */
+/* line 584, ../sass/partials/_pages.scss */
 #experience-page .experience-body .extra .end {
   width: 90%;
   margin: 0 auto;
